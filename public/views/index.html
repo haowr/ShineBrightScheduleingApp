@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html ng-app="qlc" ng-controller="mainCtrl"   >
+
+<head>
+
+  <title ng-bind="title">Shine Bright Coaching</title>
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+ 
+  <meta name="msapplication-TileColor" content="#da532c">
+  <base href="/">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/main.css">
+  <!--Import Google Icon Font-->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Jura|Montserrat|Playfair+Display+SC|Pontano+Sans|Quicksand|Spectral+SC"rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.print.css" media="print"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery-ui.min.js"></script>
+  <script src="../js/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r67/three.min.js"></script>
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" integrity="sha512-jeYvJdyAYkpQCY/omvCYQo89qA5YxDW4JBT7COPsHT2sOAanwxkZRFeP9gc69b5reSDpZIoyCqZQZcWZkbB5Gw==" crossorigin="anonymous"></script>        
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+  <script  type="text/javascript" src="./js/OrbitControls.js"></script>
+  <script type="text/javascript" src="./js/angular-route.js"></script>
+  <script type="text/javascript" src="./js/routes.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src='./js/threejs.js'></script>
+  <script type="text/javascript" src="../js/directives.js"></script>
+  <script type="text/javascript" src="../services/userServices.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js" integrity="sha384-CchuzHs077vGtfhGYl9Qtc7Vx64rXBXdIAZIPbItbNyWIRTdG0oYAqki3Ry13Yzu"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/niklasvh/html2canvas/0.5.0-alpha2/dist/html2canvas.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.5.1/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="../js/angular-fullcalendar.js"></script>
+
+  
+  <script type="text/javascript" src="../controllers/homeCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/mainCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/scheduleCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/clientProfileCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/profileCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/registerCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/loginCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/intakeCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/dateCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/checkUpCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/sessionCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/discoveryCtrl.js"></script>
+  <script type="text/javascript" src="../controllers/registerCtrl.js"></script>
+  <script type="text/javascript" src="../services/authServices.js"></script>
+  <script type="text/javascript" src="../services/userServices.js"></script>
+  <script type="text/javascript" src='./js/threejs.js'></script>
+
+
+</head>
+<body >
+
+<!-- DESKTOP NAV BAR -->
+
+<div class = "hide-on-small-only">
+
+<div class="navbar-fixed ">
+
+  <nav class="blue-grey nav-center nav-small" style="border:1px solid black; opacity:.8;">
+
+    <div class="nav-wrapper">
+
+      <div data-activates="mobile-demo" class="button-collapse">
+
+        <a href="#" class="animated fadeIn"><img src="../img/bannerstr.svg" style="height:200px;width:200px;"></a>
+
+      </div>
+
+      <ul class="right hide-on-med-and-down animated fadeIn">
+
+        <li ng-click="error()" ng-show="loggedIn ||!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Home</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat underline" style="font-size:25px;" href="#">Packages</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Testimonials</a></li>
+        <li ng-click="error()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Register</a></li>
+        <li ng-click="select()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'employee'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
+        <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="white-text montserrat" style="font-size:25px;" href="#">Forms</a></li>
+        <li ng-click="error()" ng-show="loggedIn &&intake"><a class="white-text montserrat" style="font-size:25px;" href="#">Intake Form</a></li>
+        <li ng-click="error()" ng-show="loggedIn && wellness"><a class="white-text" style="font-size:25px;" hhref="#">Add/View Wellness Intake</a></li>
+        <li ng-click="select()" ng-show="loggedIn"><a class="white-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">About</a></li>
+        <li ng-click="error()" ng-show="loggedIn || !loggedIn"><a class="white-text montserrat" style="font-size:25px;" href="#">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <ul class="side-nav " id="mobile-demo">
+
+        <li ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
+        <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/packages">Packages</a></li>
+        <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/testimonials">Testimonials</a></li>
+        <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/register">Register</a></li>
+        <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
+        <li ng-show="loggedIn && userClass == 'employee'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
+        <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/profile">Profile</a></li>
+        <li ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/forms">Forms</a></li>
+        <li ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="/viewwellnessintake">Add/View Wellness Intake</a></li>
+        <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
+        <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/about">About</a></li>
+        <li ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/contact">Contact</a></li>
+
+  </ul>
+
+</div>
+
+</div>
+
+<!-- DESKTOP NAV BAR -->
+
+<!-- MOBILE NAV BAR-->
+
+<div class= "hide-on-med-and-up" >
+
+  <div class="navbar-fixed ">
+
+    <nav class="blue-grey nav-center " style="border:1px solid black; opacity:.8;">
+
+      <div class="nav-wrapper">
+        
+        <div data-activates="mobile-demo2" class="button-collapse">
+
+          <a href="#" class="animated fadeIn"><img src="../img/bannerstr.svg" style="height:50px;width:50px;"></a>
+
+        </div>
+        <!--
+        <ul class="right ">
+  
+          <li ng-click="error()" ng-show="!loggedIn"><a class="white-text montserrat" style="font-size:22px;" href="/login">Login</a></li>
+          <li ng-click="error()" ng-show="loggedIn"><a class="white-text montserrat" style="font-size:22px;" ng-click="logOut()">Logout</a></li>
+  
+        </ul>-->
+  
+      </div>
+    </nav>
+    <ul class="side-nav " id="mobile-demo2">
+  
+          <li ng-click="error()" ng-show="loggedIn ||!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/">Home</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Packages</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Testimonials</a></li>
+          <li ng-click="error()"ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Register</a></li>
+          <li ng-show="!loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="/login">Login</a></li>
+          <li ng-show="loggedIn && userClass == 'employee'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="/clientprofile">Profile</a></li>
+          <li ng-click="error()"ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-href="#">Profile</a></li>
+          <li ng-click="error()" ng-show="loggedIn && userClass == 'admin'"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Forms</a></li>
+          <li ng-click="error()"ng-show="loggedIn &&intake"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Intake</a></li>
+          <li ng-click="error()"ng-show="loggedIn && wellness"><a class="blue-grey-text" style="font-size:25px;" href="#">Wellness</a></li>
+          <li ng-show="loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" ng-click="logOut()">Logout</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">About</a></li>
+          <li ng-click="error()"ng-show="loggedIn || !loggedIn"><a class="blue-grey-text montserrat" style="font-size:25px;" href="#">Contact</a></li>
+  
+    </ul>
+  
+  
+  </div>
+  
+</div>
+
+<div class = "row" ng-if="atHome">
+  <div class = "row"></div>
+  <div class = "row"></div>
+  <div class = "row"></div>
+
+  <div class = "col s12">
+
+      <h4 class = " left-align yellow-text text-lighten-2" style=" background-color:transparent;  font-family:'cc';">SHINE BRIGHT LIFE COACHING!</h4>
+      
+    </div>
+    <div class="col s6 left-align">
+          
+      <p class="montserrat flow-text" style="font-family:'f1';">
+          Welcome home! I hope you're been having an amazing day, and you're shining bright!
+          I really appreciate you coming on board and taking that first a big step towards greater 
+          emotional wellness, reaching out. So let's get started! 
+      </p>
+
+      <div class="col s12" style="border:2px solid black;"></div>
+
+</div>
+<div class="col s6 left-align">
+          
+
+
+</div>
+</div>
+<!-- MOBILE NAV BAR-->
+
+<div class="container" >
+  
+  
+      <div ng-view  >
+      </div>
+
+
+</div>
+
+
+
+<div id="modal1large" class="modal hide-on-small-only" style="border:2px solid black;">
+
+  <div class = "row"></div>
+  <div class = "row"></div>
+
+  <div class = "row">
+
+    <div class = 'col s12 center-align red lighten-4'>
+
+      <div class = "row"></div>
+
+      <h4 class="montserrat underline animated shake slow">Demo Mode.</h4>
+
+      <div class = "row">
+
+        <div class = "col s2">
+
+        </div>
+         
+        <div class = "col s8 center-align" style="border:2px solid black;">
+
+            <p class = "montserrat" style="font-size:30px;">
+
+              Currently Running In Demo Mode, Only Hours 8 AM, and 9 AM Available...
+
+            </p>
+
+        </div>
+
+        <div class = "col s2"> 
+
+        </div>
+
+      </div>
+     
+    <div class="modal-footer red lighten-4">
+      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat white">Ok</a>
+    </div>
+    </div>
+
+  </div>
+ 
+
+</div>
+
+<div id="modal1" class="modal " style="border:4px solid black; border-radius:5%; width:300px;">
+
+  <div class = "row"></div>
+  <div class = "row"></div>
+
+  <div class = "row">
+
+    <div class = 'col s12 center-align red lighten-4'>
+
+      <div class = "row"></div>
+
+      <h4 class="montserrat underline animated shake slow flow-text">Demo Mode.</h4>
+
+      <div class = "row">
+
+        <div class = "col s2">
+
+        </div>
+         
+        <div class = "col s8 center-align" style="border:2px solid white;">
+
+            <p class = "montserrat flow-text" >
+
+              Currently Running In Demo Mode, Only Hours 8 AM, and 9 AM Available...
+
+            </p>
+
+        </div>
+
+        <div class = "col s2"> 
+
+        </div>
+
+      </div>
+     
+    <div class="modal-footer red lighten-4">
+      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat black white-text">Ok</a>
+    </div>
+    </div>
+
+  </div>
+ 
+
+</div>
+
+<div id="modal2" class="modal" style="border:4px solid black; border-radius:5%; width:300px;">
+
+  <div class = "row"></div>
+  <div class = "row"></div>
+
+  <div class = "row">
+
+    <div class = 'col s12 center-align red lighten-4' style="border-top:2px solid black; border-bottom:2px solid black;">
+
+      <div class = "row"></div>
+
+      <h4 class="montserrat underline animated shake slow">Demo User.</h4>
+
+      <div class = "row">
+
+        <div class = "col s2">
+
+        </div>
+         
+        <div class = "col s8 center-align" style="border:2px solid white;">
+
+            <p class = "montserrat flow-text">
+
+                User: dball
+
+            </p>
+            <p class = "montserrat flow-text">
+
+                Password: Dragonball1
+            </p>
+
+        </div>
+
+        <div class = "col s2"> 
+
+        </div>
+
+      </div>
+     
+    <div class="modal-footer red lighten-4">
+      <a href="#" ng-click="closeModal();" class="modal-action modal-close waves-effect waves-green btn-flat black white-text">Ok</a>
+    </div>
+    </div>
+
+  </div>
+  <div class = "row"></div>
+
+ 
+
+</div>
+
+<div ng-app='nxGeometry'>
+  <div class="container" nx-geometry>
+
+
+  </div>
+</div>
+
+<!-- Modal Trigger -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+<script>
+
+  $(document).ready(function () {
+
+    $(".button-collapse").sideNav({
+      menuWidth: 200, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens,
+
+    }
+    );
+      $('.modal').modal();
+  });
+
+</script>
+
+</body>
+
+</html>

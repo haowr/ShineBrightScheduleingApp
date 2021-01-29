@@ -1,0 +1,776 @@
+<html  ng-app="store"ng-controller="mainCtrl" ng-view>
+
+<head>
+
+  <title>OHRHA | A BURNING HOUSE</title>
+
+  <meta name="theme-color" content="black" />
+
+  <meta name="DESCRIPTION"
+    content="Your Modern Web. A web application is the way the modern web user interacts with web content. Get in touch and build your own! ">
+    <base href="/">
+
+  <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+
+  <!-- Compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    crossorigin="anonymous" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN">
+  <link href="/css/main2.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Ubuntu&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+
+  <!-- JavaScript Dependencies -->
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript" src="/js/angular-route.js"></script>
+  <script type="text/javascript" src='/directives/threejs'></script>
+  <script src="/js/app.js" type="text/javascript"></script>
+  <script src="/js/routes.js" type="text/javascript"></script>
+  <script src="/services/authServices.js" type="text/javascript"></script>
+
+  <script src="https://unpkg.com/seethru@4/dist/seeThru.min.js"></script>
+
+
+  <!-- JavaScript Dependencies -->
+
+</head>
+
+<body class="" style="    background: url('./css/cityhome.svg') no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;" >
+
+    <div class="row hide-on-small-only" ng-show="!heyLeah">
+
+        <!-- INRODUCTION -->
+
+        <div class="row"></div>
+
+        <h4 class="montserrat animated pulse ">Hey {{clientName}}!</h4>
+
+        <div class="col s2"></div>
+
+        <div class="col s8">
+
+            <p class="montserrat" style="font-size: 20px;">
+                Welcome home! I hope you're been having an amazing day, and shining bright!
+                I really appreciate you coming on board and taking that first a big step towards greater 
+                emotional wellness, reaching out. So let's get started! 
+            </p>
+
+            <div class="col s12" style="border:2px solid black;"></div>
+
+        </div>
+
+        <div class="col s2"></div>
+
+        <!-- INRODUCTION -->
+
+        <!-- BOOKINGS SECTION -->
+
+        <div class = "col s3"></div>
+
+        <div class = "col s6 center-align">
+
+            <div class = "row"></div>
+            <div class = "row"></div>
+
+            <div class = "col s12" style = "border:2px solid black;">
+
+                <div class="row">
+
+                    <div class = "col s12" style = "border-bottom:1px solid rgb(98, 98, 98);">
+                        
+                        <div class = "col s12 center-align">
+
+                            <i class = "material-icons black-text" style = "font-size:40px;">
+                            schedule
+                            </i>
+
+                        </div>
+
+                        <div class = "col s12 center-align">
+
+                            <span class = "black-text" style = "font-size:25px; text-decoration:underline;">
+                                {{currentBookingTitle}}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row"></div>
+
+                    <a href="#" onclick="return false;">
+
+                        <div class="col s2">
+
+                            <div class="left-align">
+
+                                <i ng-click = "changeBookingLeft()" class = "material-icons black-text animated flash" style = "font-size:40px">
+                                chevron_left
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                    <a href = "#" class = "black-text" onclick = "return false;">
+
+                        <div ng-show = "currentUserBookingsArray[currentBooking].completed" ng-class = "{'grey':currentUserBookingsArray[currentBooking].completed,'lighten-4': currentUserBookingsArray[currentBooking].completed}" 
+                             class = "col s8 animated fadeIn" style = "border:2px solid grey;">
+
+                            <div ng-show = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
+                                 class="row center-align">
+
+                                <div class="row"></div>
+
+                                <div class="col s12 center-align">
+
+                                    <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                                </div>
+
+                            </div>
+
+                            <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                                 class="row center-align">
+
+                                <div class="row">
+
+                                    <div class="col s4"></div>
+                                    <div class="col s4"></div>
+                                    <div class="col s4">
+
+                                        <i ng-show="currentUserBookingsArray[currentBooking].completed" class="material-icons green-text" 
+                                           style="font-size:35px; text-decoration:underline;">done</i>
+
+                                        <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                           style="font-size:35px; text-decoration:underline;">priority_high</i>
+                                        
+                                    </div>
+
+                                    <div class='col s12' ng-click = "markAsNotCompleted(currentBooking)" >
+
+                                        <p class="montserrat animated fadeIn" style= "font-size:20px;">
+
+                                            {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                        </p>
+
+                                        <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                            {{currentUserBookingsArray[currentBooking].date}}
+
+                                        </p>
+
+                                        <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
+                                            {{bookings[currentBooking].time}}
+                                        </span>
+
+
+                                        <div class= "col s12 center-align">
+
+                                            <p class= "montserrat" style= "font-size:20px;">( Click To Mark As Completed )</p>
+
+                                        </div>
+
+                                    </div>
+
+
+                                        <div class= "col s12 right-align">
+
+                                            <div class= "col s6">
+
+
+
+                                            </div>
+                                            <div class= "col s6">
+
+                                                <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+
+                                            </div>
+
+                                        </div>            
+
+                                </div>
+
+                                <div class= "center-align" ng-show= "bookings.length <1 && !loadingClientBookings">
+
+                                    <p class= "montserrat blue-grey-text">There Are No Bookings Yet</p>
+
+                                    <div ng-show= "loadingAmountPending">
+
+                                        <i style= "font-size:17px;" class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+
+                                    </div>
+                                    <div ng-show= "!loadingAmountPending">
+
+                                        <i class= "material-icons">clear</i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div ng-show ="!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" 
+                                class= "row center-align">
+
+                            <div class= "row">
+
+                            
+                                <div class= 'col s12'>
+
+                                    <div class= "row"></div>
+
+                                    <div class= "col s12 center-align">
+
+                                        <p class= "montserrat" style= "font-size:20px;">( No Bookings Yet! )</p>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class= "col s12 right-align">
+
+                                        <div class= "col s6">
+
+
+
+                                        </div>
+                                        <div class= "col s6">
+
+                                            <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+
+                                        </div>
+
+                                    </div>            
+
+                            </div>
+
+                        </div>
+
+                        </div>
+
+                    </a>
+
+                    <a href= "#" class= "black-text" onclick= "return false;">
+
+                        <div ng-show= "!currentUserBookingsArray[currentBooking].completed" class= "col s8 animated fadeIn white" style= "border:2px solid grey;">
+
+                            <div ng-show= "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" class= "row center-align">
+
+                                <div class= "row"></div>
+                                <div class= "row"></div>
+
+                                <div class= "col s12 center-align">
+                                    <br>
+                                    <i class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                                </div>
+
+                                <div class= "row"></div>
+                                <div class= "row"></div>
+
+
+                            </div>
+
+                            <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                                 class= "row center-align">
+
+                                <div class= "row">
+
+                                    <div ng-click= "markAsCompleted(currentBooking)">
+
+                                    <div class= "col s4"></div>
+                                    <div class= "col s4"></div>
+                                    <div class= "col s4">
+                                    
+                                        <i ng-show= "!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                            style= "font-size:35px; text-decoration:underline;">priority_high</i>
+
+                                    </div>
+
+                                    <div class= 'col s12'>
+
+                                        <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                            {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                        </p>
+
+                                        <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                            {{currentUserBookingsArray[currentBooking].date}}
+
+                                        </p>
+
+                                        <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
+
+                                            {{bookings[currentBooking].time}}
+
+                                        </span>
+
+                                    
+                                        <div class= "col s12 center-align">
+
+                                            <p class= "montserrat" style= "font-size:20px;">( Click To Mark As Completed )</p>
+
+                                        </div>
+
+
+                                    </div>
+                                    
+                                
+                                    </div>
+
+                                    <div class= "col s12 right-align">
+
+                                        <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" class= "row center-align">
+
+                            <div class= "row">
+
+                                <div class= 'col s12' >
+
+                                    <div class= "row"></div>
+                                    <div class= "row"></div>
+
+                                    <div class= "col s12 center-align">
+
+                                        <p ng-class= "{'shake': shake}" class= "montserrat animated" style= "font-size:22px;">( No Bookings Yet! )</p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+            </div>
+
+            <a href= "#" class= "black-text" onclick= "return false;">
+
+                <div class= "col s2">
+
+                    <div class= "right-align">
+
+                        <i  ng-click= "changeBookingRight()" class= "material-icons black-text animated flash" style = "font-size:40px;">
+                             chevron_right
+                        </i>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+            </div>
+
+        </div>
+
+        <div class="col s3"></div>
+
+        <!-- BOOKINGS SECTION -->
+        
+</div>
+
+<div class="row hide-on-large-only" >
+
+    <!-- INRODUCTION -->
+
+    <div class="row"></div>
+
+    <h4 class="montserrat animated pulse ">Hey {{clientName}}!</h4>
+
+    <div class="col s2"></div>
+
+    <div class="col s8">
+
+        <p class="montserrat" style="font-size: 20px;">
+            Welcome home! I hope you're been having an amazing day, and shining bright!
+            I really appreciate you coming on board and taking that first a big step towards greater 
+            emotional wellness, reaching out. So let's get started! 
+        </p>
+
+        <div class="col s12" style="border:2px solid black;"></div>
+
+    </div>
+
+    <div class="col s2"></div>
+
+    <!-- INRODUCTION -->
+
+    <!-- BOOKINGS SECTION -->
+
+    <div class = "col s3"></div>
+
+    <div class = "col s6 center-align">
+
+        <div class = "row"></div>
+        <div class = "row"></div>
+
+        <div class = "col s12" style = "border:2px solid black;">
+
+            <div class="row">
+
+                <div class = "col s12" style = "border-bottom:1px solid rgb(98, 98, 98);">
+                    
+                    <div class = "col s12 center-align">
+
+                        <i class = "material-icons black-text" style = "font-size:40px;">
+                        schedule
+                        </i>
+
+                    </div>
+
+                    <div class = "col s12 center-align">
+
+                        <span class = "black-text" style = "font-size:25px; text-decoration:underline;">
+                            {{currentBookingTitle}}
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="row"></div>
+
+                <a href="#" onclick="return false;">
+
+                    <div class="col s2">
+
+                        <div class="left-align">
+
+                            <i ng-click = "changeBookingLeft()" class = "material-icons black-text animated flash" style = "font-size:40px">
+                            chevron_left
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+                <a href = "#" class = "black-text" onclick = "return false;">
+
+                    <div ng-show = "currentUserBookingsArray[currentBooking].completed" ng-class = "{'grey':currentUserBookingsArray[currentBooking].completed,'lighten-4': currentUserBookingsArray[currentBooking].completed}" 
+                         class = "col s8 animated fadeIn" style = "border:2px solid grey;">
+
+                        <div ng-show = "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" 
+                             class="row center-align">
+
+                            <div class="row"></div>
+
+                            <div class="col s12 center-align">
+
+                                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show = "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                             class="row center-align">
+
+                            <div class="row">
+
+                                <div class="col s4"></div>
+                                <div class="col s4"></div>
+                                <div class="col s4">
+
+                                    <i ng-show="currentUserBookingsArray[currentBooking].completed" class="material-icons green-text" 
+                                       style="font-size:35px; text-decoration:underline;">done</i>
+
+                                    <i ng-show="!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                       style="font-size:35px; text-decoration:underline;">priority_high</i>
+                                    
+                                </div>
+
+                                <div class='col s12' ng-click = "markAsNotCompleted(currentBooking)" >
+
+                                    <p class="montserrat animated fadeIn" style= "font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                    </p>
+
+                                    <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].date}}
+
+                                    </p>
+
+                                    <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
+                                        {{bookings[currentBooking].time}}
+                                    </span>
+
+
+                                    <div class= "col s12 center-align">
+
+                                        <p class= "montserrat" style= "font-size:20px;">( Click To Mark As Completed )</p>
+
+                                    </div>
+
+                                </div>
+
+
+                                    <div class= "col s12 right-align">
+
+                                        <div class= "col s6">
+
+
+
+                                        </div>
+                                        <div class= "col s6">
+
+                                            <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+
+                                        </div>
+
+                                    </div>            
+
+                            </div>
+
+                            <div class= "center-align" ng-show= "bookings.length <1 && !loadingClientBookings">
+
+                                <p class= "montserrat blue-grey-text">There Are No Bookings Yet</p>
+
+                                <div ng-show= "loadingAmountPending">
+
+                                    <i style= "font-size:17px;" class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+
+                                </div>
+                                <div ng-show= "!loadingAmountPending">
+
+                                    <i class= "material-icons">clear</i>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show ="!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" 
+                            class= "row center-align">
+
+                        <div class= "row">
+
+                        
+                            <div class= 'col s12'>
+
+                                <div class= "row"></div>
+
+                                <div class= "col s12 center-align">
+
+                                    <p class= "montserrat" style= "font-size:20px;">( No Bookings Yet! )</p>
+
+                                </div>
+
+                            </div>
+
+
+                                <div class= "col s12 right-align">
+
+                                    <div class= "col s6">
+
+
+
+                                    </div>
+                                    <div class= "col s6">
+
+                                        <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+
+                                    </div>
+
+                                </div>            
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </a>
+
+                <a href= "#" class= "black-text" onclick= "return false;">
+
+                    <div ng-show= "!currentUserBookingsArray[currentBooking].completed" class= "col s8 animated fadeIn white" style= "border:2px solid grey;">
+
+                        <div ng-show= "loadingClientBookings || loadingBookingStatus || loadingBookingDeletion" class= "row center-align">
+
+                            <div class= "row"></div>
+                            <div class= "row"></div>
+
+                            <div class= "col s12 center-align">
+                                <br>
+                                <i class= "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="font-size:35px;"></i>
+
+                            </div>
+
+                            <div class= "row"></div>
+                            <div class= "row"></div>
+
+
+                        </div>
+
+                        <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length > 0" 
+                             class= "row center-align">
+
+                            <div class= "row">
+
+                                <div ng-click= "markAsCompleted(currentBooking)">
+
+                                <div class= "col s4"></div>
+                                <div class= "col s4"></div>
+                                <div class= "col s4">
+                                
+                                    <i ng-show= "!currentUserBookingsArray[currentBooking].completed" class="material-icons"
+                                        style= "font-size:35px; text-decoration:underline;">priority_high</i>
+
+                                </div>
+
+                                <div class= 'col s12'>
+
+                                    <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].appointmentType}}
+
+                                    </p>
+
+                                    <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+
+                                        {{currentUserBookingsArray[currentBooking].date}}
+
+                                    </p>
+
+                                    <span class= "montserrat animated fadeIn black-text underline" style= "font-size:20px;">
+
+                                        {{bookings[currentBooking].time}}
+
+                                    </span>
+
+                                
+                                    <div class= "col s12 center-align">
+
+                                        <p class= "montserrat" style= "font-size:20px;">( Click To Mark As Completed )</p>
+
+                                    </div>
+
+
+                                </div>
+                                
+                            
+                                </div>
+
+                                <div class= "col s12 right-align">
+
+                                    <button ng-click= "deleteBooking(currentBooking)" type= "submit" class= "waves-effect waves-light red lighten-4 btn " style= "border:2px solid black;">DELETE</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div ng-show= "!loadingClientBookings && !loadingBookingStatus && !loadingBookingDeletion && currentUserBookingsArray.length == 0" class= "row center-align">
+
+                        <div class= "row">
+
+                            <div class= 'col s12' >
+
+                                <div class= "row"></div>
+                                <div class= "row"></div>
+
+                                <div class= "col s12 center-align">
+
+                                    <p ng-class= "{'shake': shake}" class= "montserrat animated" style= "font-size:22px;">( No Bookings Yet! )</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+        </div>
+
+        <a href= "#" class= "black-text" onclick= "return false;">
+
+            <div class= "col s2">
+
+                <div class= "right-align">
+
+                    <i  ng-click= "changeBookingRight()" class= "material-icons black-text animated flash" style = "font-size:40px;">
+                         chevron_right
+                    </i>
+
+                </div>
+
+            </div>
+
+        </a>
+
+        </div>
+
+    </div>
+
+    <div class="col s3"></div>
+
+    <!-- BOOKINGS SECTION -->
+    
+</div>
+
+
+
+
+
+
+
+  <script  src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js" integrity="sha512-jeYvJdyAYkpQCY/omvCYQo89qA5YxDW4JBT7COPsHT2sOAanwxkZRFeP9gc69b5reSDpZIoyCqZQZcWZkbB5Gw==" crossorigin="anonymous"></script>        
+  <script src="https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js"></script>
+  <script  type="text/javascript" src="./js/OrbitControls.js"></script>
+<script type="text/javascript" src="./js/boyscript.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+
+      
+    })
+
+</script>
+
+</body>
+
+</html>
