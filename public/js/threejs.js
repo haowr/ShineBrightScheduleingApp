@@ -280,7 +280,7 @@ document.addEventListener('mousemove', function(e){
 )
 document.addEventListener('mousedown', function(e){
 
-    if((window.location.href === "https://sbcoaching.herokuapp.com") || (window.location.href==="http://localhost:8080/")){
+    if((window.location.href === "https://aqueous-woodland-14387.herokuapp.com/") || (window.location.href==="http://localhost:8080/")){
 
         animate2()
         if ( action !== null ) {
