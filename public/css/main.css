@@ -28,6 +28,9 @@ canvas{
     height: 100%
 
 }
+a{
+    color:black;
+}
 
 @font-face {
     font-family: 'cc'; /*a name to be used later*/

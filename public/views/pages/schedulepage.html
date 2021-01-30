@@ -6,13 +6,13 @@
 <div class="row  center-align  ">
 
     <div class="row hide-on-small-only" >
-
+<!--
         <div class = "row"></div>
         <div class = "row"></div>
         <div class = "row"></div>
         <div class = "row"></div>
         <div class = "row"></div>
-        <div class = "row"></div>
+        <div class = "row"></div> -->
 
     <!-- DESKTOP MENU -->
 
@@ -86,7 +86,7 @@
 </div>
 
 
-<div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen">
+<div ng-show="!scheduledJobPageOpen && !scheduleSDOrCiPageOpen && !bookingsPageOpen &&!bookingPageOpen" >
 
 
     <div  >
@@ -106,7 +106,7 @@
         </div>
         
     
-        <div  fc-options="calendarOoptions"  class="ng-pristine ng-untouched ng-valid ng-isolate-scope fc fc-unthemed fc-ltr ng-not-empty">
+        <div  fc-options="calendarOoptions"  class="ng-pristine ng-untouched ng-valid ng-isolate-scope fc fc-unthemed fc-ltr ng-not-empty" >
             <div class="fc-toolbar fc-header-toolbar">
                 
                 <div class="fc-center">
@@ -115,25 +115,25 @@
     
             
             </div>
-            <div class="fc-view-container" style="">
+            <div class="fc-view-container">
                 <div class="fc-view fc-month-view fc-basic-view" >
-                    <table class="" style="border:2px solid black; background-color: white;">
+                    <table class="" style="border:2px solid black; ">
                         <thead class="fc-head">
                             <tr>
                                 <td class="fc-head-container fc-widget-header">
                                     <div class="fc-row fc-widget-header">
-                                        <table class="" style="border:1px solid black;">
+                                        <table class="" style="border:4px solid black;">
                                             <thead >
     
                                                 <tr >
     
-                                                    <th class="fc-day-header fc-widget-header fc-mon borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text " style=" color:black">Sun</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-mon borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text"  style="">Mon</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-tue borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text" >Tue</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-wed borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text"  >Wed</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-thu borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text"  >Thu</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-fri borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text"  >Fri</span></th>
-                                                    <th class="fc-day-header fc-widget-header fc-sat borderblack" style="border:2px solid black;"><span class="montserrat black-text flow-text"  >Sat</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-mon borderblack fc-day-number montserrat" ><span class="montserrat black-text flow-text " style="font-size:25px; color:black">Sun</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-mon borderblack" ><span class="montserrat black-text flow-text"  style="">Mon</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-tue borderblack" ><span class="montserrat black-text flow-text" >Tue</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-wed borderblack" ><span class="montserrat black-text flow-text"  >Wed</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-thu borderblack" ><span class="montserrat black-text flow-text"  >Thu</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-fri borderblack" ><span class="montserrat black-text flow-text"  >Fri</span></th>
+                                                    <th class="fc-day-header fc-widget-header fc-sat borderblack" ><span class="montserrat black-text flow-text"  >Sat</span></th>
                                                 
                                                 </tr>
     
