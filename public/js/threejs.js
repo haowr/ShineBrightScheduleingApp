@@ -310,6 +310,12 @@ document.addEventListener('mousedown', function(e){
 
             action.stop();
             action.play();
+            mixer.addEventListener('finished', ()=>{
+
+            action.reset()
+            action.paused = true;
+
+            })
             
           }
 
