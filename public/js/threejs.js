@@ -90,7 +90,6 @@
                             
                         }
 
-                        
                         if (o.isBone && o.name === 'HairR002_Chica') { 
                             
                             waist = o;
@@ -159,26 +158,49 @@
                                 }); 
 
         gltf.scene.scale.set(.3,.3,.3)
-		mixer = new THREE.AnimationMixer( gltf.scene );
-        action = mixer.clipAction( gltf.animations[ 0 ] );
-		action.setLoop( THREE.LoopOnce );
-        action.play();
-        mixer.addEventListener('finished', ()=>{
+        mixer = new THREE.AnimationMixer( gltf.scene );
+        
+        if((window.location.href === "https://aqueous-woodland-14387.herokuapp.com/") || (window.location.href==="http://localhost:8080/")){
 
-            console.log("finished...")
+            //animate2()
+            if ( action !== null ) {
+    
+                action = mixer.clipAction( gltf.animations[ 0 ] );
+                action.setLoop( THREE.LoopOnce );
+                action.play();
+                mixer.addEventListener('finished', ()=>{
+        
+                    console.log("finished...")
+                    currentlyAnimating = false;
+                    action.reset()
+                    action.paused = true;
+                    console.log(action)
+                    //action.stop()
+                    //action.pause()
+                    //leftshoulder.position.z = - .4
+                    //leftarm.position.z = -.4
+                   //lefthand.position.z = -.6
+        
+        
+        
+                })
+                
+              }
+    
+        }else{
+
             currentlyAnimating = false;
+            action = mixer.clipAction( gltf.animations[ 0 ] );
+            action.setLoop( THREE.LoopOnce );
+            action.play();
             action.reset()
             action.paused = true;
-            console.log(action)
-            //action.stop()
-            //action.pause()
-            //leftshoulder.position.z = - .4
-            //leftarm.position.z = -.4
-           //lefthand.position.z = -.6
-
-
-
-        })
+    
+            console.log(window.location.href)
+    
+    
+        }
+     
 		gltf.scene.position.set(0,-1.4,0)
 		gltf.scene.rotation.y = Math.PI / 0.50;
 
@@ -252,6 +274,7 @@ document.addEventListener('mousemove', function(e){
         if(mousecoords.y < 2000){
 
             if(neck && waist && leftarm && rightarm ){
+
                 moveJoint(mousecoords,neck,50)
                 moveJoint(mousecoords,waist,30)
               

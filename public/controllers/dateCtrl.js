@@ -4472,21 +4472,27 @@
 
             if($scope.appointmentType == "checkup"){
 
-                $window.location.href = "/schedule/"+$scope.dateCondensed+"/checkup";
+                //$window.location.href = "/schedule/"+$scope.dateCondensed+"/checkup";
+
+                $location.path("/schedule/"+$scope.dateCondensed+"/checkup");
+
 
 
             }
 
             if($scope.appointmentType == "session"){
 
-                $window.location.href = "/schedule/"+$scope.dateCondensed+"/session";
+                //$window.location.href = "/schedule/"+$scope.dateCondensed+"/session";
+                $location.path("/schedule/"+$scope.dateCondensed+"/session");
+
 
 
             }
 
             if($scope.appointmentType == "discovery"){
 
-                $window.location.href = "/schedule/"+$scope.dateCondensed+"/discovery";
+                //$window.location.href = "/schedule/"+$scope.dateCondensed+"/discovery";
+                $location.path("/schedule/"+$scope.dateCondensed+"/discovery");
 
 
             }

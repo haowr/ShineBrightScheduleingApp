@@ -340,6 +340,7 @@
 
                     }
                     if ($scope.hour == "nine") {
+                        
                         $location.path("/datepage/discovery");
 
 
