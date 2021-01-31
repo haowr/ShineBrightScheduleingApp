@@ -8,7 +8,7 @@
 
     })
 
-    app.controller('sessionCtrl', function ($rootScope,Auth, $scope, User, $window, $timeout) {
+    app.controller('sessionCtrl', function ($rootScope,Auth, $scope, User, $window, $timeout,$location) {
 
         $rootScope.$on('$routeChangeStart', function () {
 
@@ -1283,7 +1283,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1375,7 +1375,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1483,7 +1483,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1574,7 +1574,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1685,7 +1685,7 @@
                                         }
                      
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1780,7 +1780,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1890,7 +1890,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1985,7 +1985,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType = "Session!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -2098,7 +2098,7 @@
                                         }
                        
                                         $scope.dateDataForUser.appointmentType  = "Session!";
-                                        $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -2186,7 +2186,7 @@
                                         }
     
                                         $scope.dateDataForUser.appointmentType  = "Session!";
-                                        $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
     
