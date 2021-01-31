@@ -7,9 +7,21 @@
   
     })
 
-    app.controller('loginCtrl', function ($scope, Auth, $timeout, $location, $rootScope,$window) {
+    app.controller('loginCtrl', function ($rootScope, $scope, Auth, $timeout, $location, $rootScope,$window) {
 
 
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
+
+        })
 
         $scope.successfulLogin              = false;
         $scope.failedLogin                  = false;

@@ -8,12 +8,27 @@
         
     })
 
-    app.controller('clientProfileCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope, $window) {
+    app.controller('clientProfileCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope, $window) {
+
+
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
+
+        })
 
         if(!Auth.isLoggedIn()){
 
             $location.path('/')
             $rootScope.loggedIn = false;
+            console.log("I'm not logged in...")
 
         }else{
 
@@ -36,6 +51,7 @@
 
         $scope.discoveryPageOpen    = false;
         $scope.sessionPageOpen      = false;
+        $scope.inboxOpen            = true;
         $scope.checkUpPageOpen      = true;
         $scope.checkUpAvailable10   = true;
         $scope.sessionAvailable10   = true;
@@ -56,6 +72,15 @@
         $scope.sessionAvailable3    = true;
         $scope.discoveryAvailable3  = true;
 
+        $scope.messageObject                = {
+            id: "5bff0b83ccf498187c715bd3",
+            from: $scope.clientName,
+            to: "Leah Kelly",
+            subject: "",
+            read: false,
+            body:""
+        }
+
         
         $scope.bookingInfo = {
 
@@ -66,6 +91,133 @@
 
 
             console.log("Oy")
+        }
+        $scope.openInbox = function () {
+
+            if (!$scope.inboxOpen) {
+
+                $scope.inboxOpen        = true;
+                $scope.composeOpen      = false;
+
+            }
+
+        }
+        $scope.submitMessage2 = function () {
+
+            console.log("oy")
+            if($scope.messageObject.subject == ""){
+
+                $scope.messageSubjectCannotBeEmpty  = true;
+
+            }
+
+            if($scope.messageObject.body == ""){
+
+                $scope.messageBodyCannotBeEmpty     = true;
+
+            }
+
+            if($scope.messageObject.body    !== "" &&
+               $scope.messageObject.subject  == ""){
+
+                $scope.messabeSubjectCannotBeEmpty  = true;
+                $scope.messageBodyCannotBeEmpty     = false;
+
+                
+            }
+            if( $scope.messageObject.subject   !== "" &&
+                $scope.messageObject.body       == ""){
+
+                 $scope.messageSubjectCannotBeEmpty  = false;
+                 $scope.messageBodyCannotBeEmpty     = true;
+
+            }
+
+            if($scope.messageObject.body    !== "" &&
+               $scope.messageObject.subject !== ""){
+                
+                $scope.messageBodyCannotBeEmpty     = false;
+                $scope.messageSubjectCannotBeEmpty  = false;
+                $scope.sendingMessage               = true
+                $scope.shinebrightloading.play()
+
+                $timeout(function () {
+
+                User.messageAdmin($scope.messageObject).then(function (data) {
+
+                    $scope.sendingMessage   = false
+                    $scope.messageSent      = true;
+
+                    $scope.shinebrightsuccess.play()
+
+                    $timeout(function () {
+
+                        $scope.messageSent              = false;
+                        $scope.messageObject.subject    = ""
+                        $scope.messageObject.body   = ""
+
+                    }, 2500)
+
+                })
+
+            }, 2500)
+
+        }
+
+        }
+        $scope.submitMessageAdmin = function () {
+
+            $scope.sendingMessage = true;
+
+            if($scope.messageObject.subject == ""){
+
+                $scope.messageSubjectCannotBeEmpty  = true;
+
+            }
+
+            if($scope.messageObject.body == ""){
+
+                $scope.messabeBodyCannotBeEmpty     = true;
+
+            }
+
+            if($scope.messageObject.body !== "" &&
+               $scope.messageObeject.subject !== ""){
+                
+                $timeout(function () {
+
+                User.sendMessage($scope.messageObject).then(function (data) {
+
+                    $scope.sendingMessage   = false
+                    $scope.messageSent      = true;
+
+                    $timeout(function () {
+
+                        $scope.messageSent              = false;
+                        $scope.messageObject.subject    = "";
+                        $scope.messageObject.body       = "";
+
+                    }, 2500)
+
+                })
+
+                }, 2500)
+                
+            }
+
+
+        }
+
+        $scope.openCompose = function () {
+
+            if (!$scope.composeOpen) {
+
+                $scope.composeOpen      = true;
+                $scope.inboxOpen        = false;
+                $scope.userListOpen     = true;
+
+            }
+
         }
 
         User.getUser($scope.idFromLocalStorage).then(function (data) {
@@ -175,8 +327,6 @@
 
                     } else{
 
-
-
                         $scope.currentBooking       = 0;
                         $scope.currentBookingTitle  = 1;
 
@@ -238,10 +388,11 @@
 
         }
         $scope.index = 0;
+
         $scope.deleteBooking = function(currentbooking){
 
                 $scope.loadingBookingDeletion       = true;
-                $scope.index = currentbooking 
+                $scope.index                        = currentbooking 
                 console.log("INDEX", $scope.index)
 
                 
@@ -270,7 +421,7 @@
 
                             $scope.loadingBookingDeletion   = false;
                             $scope.shake                    = true;
-                            $scope.currentBookingTitle      = 1
+                            $scope.currentBookingTitle      = $scope.currentUserBookingsArray.length
                             $scope.currentBooking           = 0;
 
                         }else{

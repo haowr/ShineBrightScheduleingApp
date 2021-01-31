@@ -104,7 +104,7 @@
                         </div>
                         <div ng-show="!session800AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
@@ -207,7 +207,7 @@
                         <div ng-show="!session810AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
 
                             <div ng-show="session810AMNoRoom" class = "col s12 red lighten-4" >
@@ -274,7 +274,7 @@
                                 <div ng-show="!session820AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -332,7 +332,7 @@
                         <div ng-show="!session820AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
 
                             <div ng-show="session820AMNoRoom" class = "col s12 red lighten-4" >
@@ -381,7 +381,7 @@
                                 <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -413,7 +413,7 @@
                                 <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -461,7 +461,7 @@
                             <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
                                 <div class = "row"></div>
                                 <div class = "col s12">
@@ -501,7 +501,7 @@
                                 <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -533,7 +533,7 @@
                                 <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -581,7 +581,7 @@
                             <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
                                 <div class = "row"></div>
                                 <div class = "col s12">
@@ -621,7 +621,7 @@
                                 <div ng-show="!session850AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -653,7 +653,7 @@
                                 <div ng-show="!session850AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -722,6 +722,88 @@
     </div>
 
     <div class = "hide-on-small-only">
+
+        <div class="row  center-align  ">
+
+            <div class="row hide-on-small-only" >
+        <!--
+                <div class = "row"></div>
+                <div class = "row"></div>
+                <div class = "row"></div>
+                <div class = "row"></div>
+                <div class = "row"></div>
+                <div class = "row"></div> -->
+        
+            <!-- DESKTOP MENU -->
+        
+        
+                <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+        
+                    <div class="col s2"></div>
+        
+                        <div class="col s8 right-align">
+        
+                            <a ng-href="/clientprofile">
+        
+                                <br>
+                                <br>
+                                <i class="material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+        
+                            </a>
+        
+                        </div>
+        
+                        <div class="col s2"></div>
+        
+                </div>
+        
+                <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+        
+                    <br>
+                    <br>
+                    <a href="/schedule">
+        
+                        <i class="material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()">schedule</i>
+        
+                    </a>
+        
+                </div>
+        
+                <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+        
+                    <br>
+                    <br>
+                    <div class="col s2"></div>
+        
+                    <div class="col s8 left-align">
+        
+                        <a href="/messages">
+        
+                            <i class="material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
+        
+                        </a>
+        
+                    </div>
+        
+                    <div class="col s2"></div>
+        
+        
+                </div>
+        
+                <div class="row">
+                    
+                    <div class="col s2"></div>
+                    <div class="col s8" style="border:4px solid black;"></div>
+                    <div class="col s2"></div>
+        
+                </div>
+        
+        
+            <!-- DESKTOP MENU -->
+        
+            </div>
+        
+        </div>
 
         <div class = "col s12 center-align">
 
@@ -825,7 +907,7 @@
                         </div>
                         <div ng-show="!session800AMSelected" class = "row animated fadeIn">
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
                             <div class = "col s12">
 
@@ -928,7 +1010,7 @@
                         <div ng-show="!session810AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
 
                             <div ng-show="session810AMNoRoom" class = "col s12 red lighten-4" >
@@ -995,7 +1077,7 @@
                                 <div ng-show="!session820AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1053,7 +1135,7 @@
                         <div ng-show="!session820AMSelected" class = "row animated fadeIn">
 
                             <div class = "col s3"></div>
-                            <div class = "col s6" style="border:1px solid white;"></div>
+                            <div class = "col s6" style="border:1px solid transparent;"></div>
                             <div class = "col s3"></div>
 
                             <div ng-show="session820AMNoRoom" class = "col s12 red lighten-4" >
@@ -1102,7 +1184,7 @@
                                 <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1134,7 +1216,7 @@
                                 <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1182,7 +1264,7 @@
                             <div ng-show="!session830AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
                                 <div class = "row"></div>
                                 <div class = "col s12">
@@ -1222,7 +1304,7 @@
                                 <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1254,7 +1336,7 @@
                                 <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1302,7 +1384,7 @@
                             <div ng-show="!session840AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                 <div class = "col s3"></div>
                                 <div class = "row"></div>
                                 <div class = "col s12">
@@ -1342,7 +1424,7 @@
                                 <div ng-show="!session850AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1374,7 +1456,7 @@
                                 <div ng-show="!session850AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
                                     
                                     <div class = "col s12">
@@ -1555,7 +1637,7 @@
                             <div ng-show="!session900AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white;"></div>
+                                <div class = "col s6" style="border:1px solid transparent;"></div>
                                 <div class = "col s3"></div>
 
                                 <div class = "col s12">
@@ -1620,7 +1702,7 @@
                                     <div ng-show="session910AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -1674,7 +1756,7 @@
                             <div ng-show="!session910AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white;"></div>
+                                <div class = "col s6" style="border:1px solid transparent;"></div>
                                 <div class = "col s3"></div>
 
                                 <div ng-show="session910AMNoRoom" class = "col s12 red lighten-4" >
@@ -1744,7 +1826,7 @@
                                     <div ng-show="!session920AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -1804,7 +1886,7 @@
                             <div ng-show="!session920AMSelected" class = "row animated fadeIn">
 
                                 <div class = "col s3"></div>
-                                <div class = "col s6" style="border:1px solid white;"></div>
+                                <div class = "col s6" style="border:1px solid transparent;"></div>
                                 <div class = "col s3"></div>
 
                                 <div ng-show="session920AMNoRoom" class = "col s12 red lighten-4" >
@@ -1854,7 +1936,7 @@
                                     <div ng-show="!session930AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -1888,7 +1970,7 @@
                                     <div ng-show="!session930AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -1941,7 +2023,7 @@
                                 <div ng-show="!session930AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
 
                                     <div class = "row"></div>
@@ -1983,7 +2065,7 @@
                                     <div ng-show="!session940AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2016,7 +2098,7 @@
                                     <div ng-show="!session940AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2067,7 +2149,7 @@
                                 <div ng-show="!session940AMSelected" class = "row animated fadeIn">
 
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
 
                                     <div class = "row"></div>
@@ -2109,7 +2191,7 @@
                                     <div ng-show="!session950AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2143,7 +2225,7 @@
                                     <div ng-show="!session950AMSelected" class = "row animated fadeIn">
 
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2475,7 +2557,7 @@
                                     <div ng-show="session910AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2599,7 +2681,7 @@
                                     <div ng-show="!session920AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2709,7 +2791,7 @@
                                     <div ng-show="!session930AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2743,7 +2825,7 @@
                                     <div ng-show="!session930AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2796,7 +2878,7 @@
                                 <div ng-show="!session930AMSelected" class = "row animated fadeIn">
     
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
     
                                     <div class = "row"></div>
@@ -2838,7 +2920,7 @@
                                     <div ng-show="!session940AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2871,7 +2953,7 @@
                                     <div ng-show="!session940AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2922,7 +3004,7 @@
                                 <div ng-show="!session940AMSelected" class = "row animated fadeIn">
     
                                     <div class = "col s3"></div>
-                                    <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                    <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                     <div class = "col s3"></div>
     
                                     <div class = "row"></div>
@@ -2964,7 +3046,7 @@
                                     <div ng-show="!session950AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">
@@ -2998,7 +3080,7 @@
                                     <div ng-show="!session950AMSelected" class = "row animated fadeIn">
     
                                         <div class = "col s3"></div>
-                                        <div class = "col s6" style="border:1px solid white; border-color:transparent;"></div>
+                                        <div class = "col s6" style="border:1px solid transparent; border-color:transparent;"></div>
                                         <div class = "col s3"></div>
                                         
                                         <div class = "col s12">

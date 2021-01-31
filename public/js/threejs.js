@@ -83,7 +83,7 @@
                         }
                         
                         // Reference the neck and waist bones
-                        console.log(o.name,o.isBone)
+                       // console.log(o.name,o.isBone)
                         if (o.isBone && o.name === 'Head_Chica') { 
     
                             neck = o;

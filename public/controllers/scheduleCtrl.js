@@ -8,10 +8,18 @@
         )
     })
 
-    app.controller('scheduleCtrl', function($scope,$http,$location,User,$timeout,$rootScope,Auth,$window){
+    app.controller('scheduleCtrl', function($rootScope,$scope,$http,$location,User,$timeout,$rootScope,Auth,$window){
                
         $rootScope.$on('$routeChangeStart', function () {
-     
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
 
         })
         
@@ -128,11 +136,13 @@
 
         $scope.openBookingPage = function (slot) {
 
+            console.log("Inside Schedule Controller...")
+
             $scope.slot                     = slot;
             $scope.hour                     = slot;
             $window.localStorage.setItem('hour', slot)
 
-            //console.log($scope.hour)
+            console.log($scope.hour)
 
             $scope.bookingPageOpen          = true;
             $scope.scheduledJobPageOpen     = false;
@@ -179,13 +189,14 @@
 
             User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
-                console.log(data)
 
                 $scope.globalDateInformation = data.data.date;
 
 
                 if ($scope.appointmentType == "discovery") {
 
+                    console.log("Discovery Date Information...")
+                    console.log($scope.globalDateInformation[$scope.hour].state)
 
                     if ($scope.hour == "eight") {
 
@@ -194,6 +205,7 @@
                             $scope.bookDiscovery8 = false;
 
                         }
+
                         if ($scope.globalDateInformation[$scope.hour].state[1] == 3) {
 
                             $scope.bookDiscovery8 = false;
@@ -206,7 +218,6 @@
                             $scope.bookDiscovery8 = false;
                             $scope.bookDiscovery18 = false;
                             $scope.bookDiscovery28 = false;
-
 
                         }
                         if ($scope.globalDateInformation[$scope.hour].state[3] == 3) {
@@ -241,6 +252,7 @@
                         }
 
                     }
+
                     if ($scope.hour == "nine") {
 
                         if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {

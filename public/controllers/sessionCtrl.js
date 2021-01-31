@@ -8,7 +8,20 @@
 
     })
 
-    app.controller('sessionCtrl', function ($scope, User, $window, $timeout) {
+    app.controller('sessionCtrl', function ($rootScope,Auth, $scope, User, $window, $timeout) {
+
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
+
+        })
 
 
         $scope.checkUpData      = {
@@ -84,11 +97,13 @@
         $scope.bookSession48 = true;
         $scope.bookSession58 = true;
 
+        $scope.session800AMSelected = true;
+
         $scope.dateDataForUser = {}
 
-            $scope.currentHour = $window.localStorage.getItem('currentHour')
+            $scope.currentHour = $window.localStorage.getItem('hour')
             $scope.currentDate = $window.localStorage.getItem('currentDate')
-        console.log("$scope.currentHour", $scope.currentHour)
+            console.log("$scope.currentHour", $scope.currentHour)
             User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
                 console.log(data)

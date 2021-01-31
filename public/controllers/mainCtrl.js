@@ -36,7 +36,9 @@
   
         $scope.logOut = function(){
 
-            Auth.logout();
+            Auth.logout().then(function(data){
+                console.log(data.data.message)
+            })
             $scope.loggedIn = false;
             $location.path('/')
             

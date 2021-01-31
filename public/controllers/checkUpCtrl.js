@@ -8,7 +8,19 @@
 
     })
 
-    app.controller('checkUpCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope,$window) {
+    app.controller('checkUpCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window) {
+
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+
+            }
+
+        })
 
 
         $scope.checkUpData      = {
@@ -751,8 +763,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp81 = false;
-                                            $scope.bookCheckUp91 = false;
+                                            $scope.bookCheckUp18 = false;
+                                            $scope.bookCheckUp19 = false;
     
                                             $timeout(function () {
     
@@ -843,8 +855,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp82 = false;
-                                            $scope.bookCheckUp92 = false;
+                                            $scope.bookCheckUp28 = false;
+                                            $scope.bookCheckUp29 = false;
     
                                             $timeout(function () {
     
@@ -935,8 +947,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp83 = false;
-                                            $scope.bookCheckUp93 = false;
+                                            $scope.bookCheckUp38 = false;
+                                            $scope.bookCheckUp39 = false;
     
                                             $timeout(function () {
     
@@ -1027,8 +1039,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp84 = false;
-                                            $scope.bookCheckUp94 = false;
+                                            $scope.bookCheckUp48 = false;
+                                            $scope.bookCheckUp49 = false;
     
                                             $timeout(function () {
     
@@ -1119,8 +1131,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp85 = false;
-                                            $scope.bookCheckUp95 = false;
+                                            $scope.bookCheckUp58 = false;
+                                            $scope.bookCheckUp59 = false;
     
                                             $timeout(function () {
     

@@ -10,6 +10,19 @@
 
     app.controller('dateCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope,$window) {
 
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
+
+        })
+
         $scope.appointmentType = "";
         $scope.checkUp8Selected     = true;
         $scope.checkUp9Selected1     = true;
@@ -171,6 +184,10 @@
         $scope.sessionTitle35       = false;
         $scope.sessionTitle36       = false;
         $scope.sessionTitle37       = false;
+
+        $scope.sessionAvailable8    = false;
+        $scope.sessionAlmostFull8   = false;
+        $scope.sessionFull8         = false;
 
 
         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
@@ -2114,6 +2131,7 @@
             $scope.discoveryAvailable8  = false;
             $scope.checkUpAvailable8    = false;
             $scope.checkUpFull8         = false;
+            console.log("should be here?")
 
         }
         if (data.data.date['eight'].state[0] == 0 && data.data.date['eight'].state[1] == 3 && data.data.date['eight'].state[2] == 3 && data.data.date['eight'].state[3] == 3
@@ -2891,6 +2909,7 @@
             $scope.discoveryAvailable8  = true;
             $scope.discoveryAlmostFull8 = false;
             $scope.discoveryFull8       = false;
+            console.log(">>")
 
     }
     if (data.data.date['eight'].state[2] == 3 &&
@@ -4468,7 +4487,7 @@
 
             $scope.dateCondensed = $window.localStorage.getItem('dateCondensed')
             $scope.appointmentType = $window.localStorage.getItem('appointmentType')
-            $window.localStorage.setItem('currentHour', slot)
+            $window.localStorage.setItem('hour', slot)
 
             if($scope.appointmentType == "checkup"){
 

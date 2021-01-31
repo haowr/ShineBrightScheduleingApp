@@ -8,7 +8,20 @@
 
     })
 
-    app.controller('discoveryCtrl', function ($scope, Auth, User, $timeout, $location, $rootScope,$window) {
+    app.controller('discoveryCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window) {
+
+        $rootScope.$on('$routeChangeStart', function () {
+
+            $rootScope.loggedIn     = Auth.isLoggedIn()    
+
+            if(!Auth.isLoggedIn()){
+
+                Auth.logout()
+                $location.path('/')
+
+            }
+
+        })
 
 
             $scope.checkUpData      = {
@@ -34,6 +47,8 @@
             $scope.dateData         = {
 
             }
+
+            $scope.dateDataForUser  = {}
 
             $scope.bookDiscovery8 = true
             $scope.bookDiscovery9 = true;
@@ -84,31 +99,36 @@
             $scope.bookDiscovery48 = true;
             $scope.bookDiscovery58 = true;
 
-            $scope.currentHour = $window.localStorage.getItem('currentHour')
+            $scope.currentHour = $window.localStorage.getItem('hour')
+            console.log("Current Hour", $scope.currentHour)
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
 
             User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
-                console.log(data)
+                //console.log(data)
 
                 $scope.globalDateInformation = data.data.date;
 
-                    if ($scope.currentHour == "eight") {
+                    if ($scope.hour == "eight") {
 
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
+                        console.log("Discovery Date Information...")
+                        console.log($scope.globalDateInformation['eight'])
+                        console.log($scope.globalDateInformation[$scope.hour].state)
+
+                        if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
 
                             $scope.bookDiscovery8 = false;
 
                         }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[1] == 3) {
 
                             $scope.bookDiscovery8 = false;
                             $scope.bookDiscovery18 = false;
 
                         }
 
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[2] == 3) {
 
                             $scope.bookDiscovery8 = false;
                             $scope.bookDiscovery18 = false;
@@ -116,7 +136,7 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[3] == 3) {
 
                             $scope.bookDiscovery18 = false;
                             $scope.bookDiscovery28 = false;
@@ -124,7 +144,7 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[4] == 3) {
 
                             $scope.bookDiscovery28 = false;
                             $scope.bookDiscovery38 = false;
@@ -132,14 +152,14 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[5] == 3) {
 
                             $scope.bookDiscovery38 = false;
                             $scope.bookDiscovery48 = false;
                             $scope.bookDiscovery58 = false;
 
                         }
-                        if ($scope.globalDateInformation['nine'].state[0] == 3) {
+                        if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
 
                             $scope.bookDiscovery58 = false;
                             $scope.bookDiscovery48 = false;
@@ -825,21 +845,17 @@
     
                     $scope.shinebrightloading.play();
     
-                    if ($scope.discoveryData.time == "8:00am" || $scope.discoveryData.time == "9:00am" ||
-                        $scope.discoveryData.time == "10:00am" || $scope.discoveryData.time == "11:00am" ||
-                        $scope.discoveryData.time == "12:00pm" || $scope.discoveryData.time == "1:00pm" ||
-                        $scope.discoveryData.time == "2:00pm" || $scope.discoveryData.time == "3:00pm") {
+                    if ($scope.discoveryData.time == "8:00am" || $scope.discoveryData.time == "9:00am") {
     
-    
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2;
-                        $scope.dateInfo[2]      = 2;
+
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id;
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.loadingBooking   = true;
                         
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
+
+                            console.log(data)
     
     
                             data.data.date[hour].state[0] = 2
@@ -915,7 +931,7 @@
                                 }
     
                                 $scope.dateDataForUser.appointmentType  = "Discovery!";
-                                $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
+                                $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                 
                                 User.addBooking($scope.dateDataForUser).then(function (data) {
                                 
@@ -933,21 +949,19 @@
                         })
     
                     }
+                    
     
                     if ($scope.discoveryData.time == "8:10am" || $scope.discoveryData.time == "9:10am" ||
                         $scope.discoveryData.time == "10:10am" || $scope.discoveryData.time == "11:10am" ||
                         $scope.discoveryData.time == "12:10pm" || $scope.discoveryData.time == "1:10pm" ||
                         $scope.discoveryData.time == "2:10pm" || $scope.discoveryData.time == "3:10pm") {
     
-                        $scope.dateInfo[1]      = 2;
-                        $scope.dateInfo[2]      = 2
-                        $scope.dateInfo[3]      = 2
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
                         $scope.bookDiscovery    = false;
                         $scope.loadingBooking1  = true;
     
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                             data.data.date[hour].state[1] = 2
                             data.data.date[hour].state[2] = 2
@@ -1021,7 +1035,7 @@
                                     }
     
                                     $scope.dateDataForUser.appointmentType = "Discovery!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
                                         
@@ -1046,17 +1060,13 @@
                         $scope.discoveryData.time == "12:20pm" || $scope.discoveryData.time == "1:20pm" ||
                         $scope.discoveryData.time == "2:20pm" || $scope.discoveryData.time == "3:20pm") {
     
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2
-                        $scope.dateInfo[2]      = 2
-    
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
                         $scope.loadingBooking2  = true;
     
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                             if (data.data.date[hour].state[3] === 2) {
     
@@ -1138,7 +1148,7 @@
                                     }
     
                                     $scope.dateDataForUser.appointmentType = "Discovery!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1163,17 +1173,13 @@
                         $scope.discoveryData.time == "12:30pm" || $scope.discoveryData.time == "1:30pm" ||
                         $scope.discoveryData.time == "2:30pm" || $scope.discoveryData.time == "3:30pm") {
     
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2
-                        $scope.dateInfo[2]      = 2
-    
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
                         $scope.loadingBooking3  = true;
     
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
                             data.data.date[hour].state[3] = 2
@@ -1244,7 +1250,7 @@
                                         }
             
                                         $scope.dateDataForUser.appointmentType = "Discovery!";
-                                        $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                        $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                         
                                         User.addBooking($scope.dateDataForUser).then(function (data) {
          
@@ -1268,18 +1274,14 @@
                         $scope.discoveryData.time == "10:40am" || $scope.discoveryData.time == "11:40am" ||
                         $scope.discoveryData.time == "12:40pm" || $scope.discoveryData.time == "1:40pm" ||
                         $scope.discoveryData.time == "2:40pm" || $scope.discoveryData.time == "3:40pm") {
-    
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2;
-                        $scope.dateInfo[2]      = 2;
-    
+   
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
                         $scope.loadingBooking4  = true;
     
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                             data.data.date[hour].state[4] = 2
                             data.data.date[hour].state[5] = 2
@@ -1361,7 +1363,7 @@
              
     
                                     $scope.dateDataForUser.appointmentType  = "Discovery!";
-                                    $scope.dateDataForUser.id               = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id               = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1435,7 +1437,7 @@
                                     }
     
                                     $scope.dateDataForUser.appointmentType = "Discovery!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1459,18 +1461,14 @@
                         $scope.discoveryData.time == "10:50am" || $scope.discoveryData.time == "11:50am" ||
                         $scope.discoveryData.time == "12:50pm" || $scope.discoveryData.time == "1:50pm" ||
                         $scope.discoveryData.time == "2:50pm" || $scope.discoveryData.time == "3:50pm") {
-    
-                        $scope.dateInfo[0]      = 2;
-                        $scope.dateInfo[1]      = 2
-                        $scope.dateInfo[2]      = 2
-    
+
                         $scope.dateData.hour    = hour;
-                        $scope.dateData.id      = $scope.id
+                        $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
                         $scope.loadingBooking5  = true;
     
-                        User.getDate($scope.id).then(function (data) {
+                        User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                             data.data.date[hour].state[5] = 2
     
@@ -1527,7 +1525,7 @@
                                     }
     
                                     $scope.dateDataForUser.appointmentType = "Discovery!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
     
@@ -1593,7 +1591,7 @@
                                     }
     
                                     $scope.dateDataForUser.appointmentType = "Discovery!";
-                                    $scope.dateDataForUser.id = $scope.idFromLocalStorage;
+                                    $scope.dateDataForUser.id = "5f3c30e99f40852b3663e127";
                                     
                                     User.addBooking($scope.dateDataForUser).then(function (data) {
     
