@@ -4,7 +4,7 @@
 
     app.config(function () {
 
-
+  
     })
 
     app.controller('loginCtrl', function ($scope, Auth, $timeout, $location, $rootScope,$window) {

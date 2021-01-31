@@ -55,8 +55,13 @@
         $scope.sessionAvailable3    = true;
         $scope.discoveryAvailable3  = true;
 
+        $scope.openModal = function () {
 
+            $('#modal2large').modal('open');
+            
+        }
        
+        $scope.openModal();
 
             
 
@@ -340,7 +345,7 @@
 
                     }
                     if ($scope.hour == "nine") {
-                        
+
                         $location.path("/datepage/discovery");
 
 
