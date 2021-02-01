@@ -111,9 +111,6 @@
                             $scope.successfulLogin      = false;
                             $rootScope.atHome           = false;
 
-
-
-
                         },7000)
                     } else {
 

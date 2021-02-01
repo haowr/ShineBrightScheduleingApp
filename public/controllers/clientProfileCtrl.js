@@ -24,6 +24,8 @@
 
         })
 
+        /*
+
         if(!Auth.isLoggedIn()){
 
             $location.path('/')
@@ -33,7 +35,7 @@
         }else{
 
             $rootScope.loggedIn = true;
-        }
+        }*/
 
         $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
         $scope.clientName                   = $window.localStorage.getItem('name');
