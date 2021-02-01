@@ -106,13 +106,15 @@
 
                         $timeout(function(){
 
-                            $location.path('/clientprofile')
+                           // $location.path('/clientprofile')
+                              $window.location.href = "/clientprofile";
+
                             $scope.successfulLogin      = false;
                             $rootScope.atHome           = false;
                             $scope.fadein           = false;
 
 
-                        },7000)
+                        },8000)
                     } else {
 
                         $timeout(function () {
