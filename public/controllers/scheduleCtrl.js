@@ -87,7 +87,7 @@
                 id: ""
             }
             $scope.hour = ""
-
+/*
             $scope.openModal = function (size) {
 
                 if(size == 'small'){
@@ -101,9 +101,30 @@
     
                 }
                 
+            }*/
+    
+    
+            $scope.openScheduledJobPageMobile = function (currentdate, id, datecondensed) {
+
+                $scope.id               = id
+                $scope.dateCondensed    = datecondensed
+               // 
+               $location.path("/schedule/"+$scope.dateCondensed)
+               $window.localStorage.setItem('dateCondensed', $scope.dateCondensed)
+               $window.localStorage.setItem('currentDate', "2020-22-30")
+    
+                console.log("openScheduledJobPage")
+    
+                if (!$scope.scheduledJobPageOpen) {
+                    $scope.schedulePageOpen     = false;
+    
+                    $scope.scheduledJobPageOpen = true;
+                    $scope.currentDate          = "2020-22-30"
+    
+                   
+    
+                }
             }
-    
-    
         
         $scope.openScheduledJobPage = function (currentdate, id, datecondensed) {
 
