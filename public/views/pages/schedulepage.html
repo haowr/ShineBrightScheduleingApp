@@ -3,6 +3,87 @@
 <!-- DESKTOP UI -->
 
 
+<div class="row  center-align hide-on-small-only ">
+
+    <div class="row hide-on-small-only" >
+<!--
+        <div class = "row"></div>
+        <div class = "row"></div>
+        <div class = "row"></div>
+        <div class = "row"></div>
+        <div class = "row"></div>
+        <div class = "row"></div> -->
+
+    <!-- DESKTOP MENU -->
+
+
+        <div class="col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+            <div class="col s2"></div>
+
+                <div class="col s8 right-align">
+
+                    <a ng-href="/clientprofile">
+
+                        <br>
+                        <br>
+                        <i class="material-icons black-text" style="font-size:60px;" ng-click="openInfoPage()">home</i>
+
+                    </a>
+
+                </div>
+
+                <div class="col s2"></div>
+
+        </div>
+
+        <div class=" col s4 animated center-align" ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
+            <a href="/schedule">
+
+                <i class="material-icons black-text" style="font-size:60px;" ng-click="openSchedulePage()">schedule</i>
+
+            </a>
+
+        </div>
+
+        <div class=" col s4 animated center-align " ng-class="{fadeOut:fadeOutMenu}">
+
+            <br>
+            <br>
+            <div class="col s2"></div>
+
+            <div class="col s8 left-align">
+
+                <a href="/messages">
+
+                    <i class="material-icons black-text" style="font-size:60px;" ng-click="openMessagePage()">email</i>
+
+                </a>
+
+            </div>
+
+            <div class="col s2"></div>
+
+
+        </div>
+
+        <div class="row">
+            
+            <div class="col s2"></div>
+            <div class="col s8" style="border-bottom:8px solid black;"></div>
+            <div class="col s2"></div>
+
+        </div>
+
+
+    <!-- DESKTOP MENU -->
+
+    </div>
+
+</div>
 
 
 
@@ -89,18 +170,25 @@
 
            
         <div class = "col s12 center-align" >
+
+            <div class = "row"></div>
     
             <h4 class = "montserrat animated pulse">Your Schedule!</h4>
-    
-            <p class  = "montserrat flow-text"> 
-                Your own, private inbox. A place where we can communicate openly and honestly, and keep in touch even outside of our appoinments! :)
-            </p>
-    
-            <div class="col s8" style="border-bottom:4px solid black;"></div>
-    
+
+            <div class="col s12">
+            
+                <p class  = "montserrat flow-text"> 
+                    Your own, private inbox. A place where we can communicate openly and honestly, and keep in touch even outside of our appoinments! :)
+                </p>
+        
+                <div class="col s12" style="border:2px solid black;"></div>
+        
         </div>
         
-    
+        </div>
+        
+        <div class = "row">
+
         <div  fc-options="calendarOoptions"  class="ng-pristine ng-untouched ng-valid ng-isolate-scope fc fc-unthemed fc-ltr ng-not-empty" >
             <div class="fc-toolbar fc-header-toolbar">
                 
@@ -492,6 +580,7 @@
                     </table>
                 </div>
             </div>
+        </div>
         </div>
     
 </div>
