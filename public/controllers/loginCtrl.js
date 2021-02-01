@@ -92,7 +92,6 @@
 
                         $timeout(function () {
 
-                            $scope.fadein           = false;
                             $scope.successfulLogin  = false;
                             $rootScope.loggedIn     = true;
                             console.log($rootScope.loggedIn)
@@ -110,6 +109,8 @@
                             $location.path('/clientprofile')
                             $scope.successfulLogin      = false;
                             $rootScope.atHome           = false;
+                            $scope.fadein           = false;
+
 
                         },7000)
                     } else {
