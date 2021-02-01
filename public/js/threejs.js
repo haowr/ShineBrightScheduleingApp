@@ -175,12 +175,6 @@
                     action.reset()
                     action.paused = true;
                     console.log(action)
-                    //action.stop()
-                    //action.pause()
-                    //leftshoulder.position.z = - .4
-                    //leftarm.position.z = -.4
-                   //lefthand.position.z = -.6
-        
         
         
                 })
