@@ -92,6 +92,7 @@
                 time: "",
                 id: ""
             }
+            
             $scope.hour = ""
 
             $scope.openModal = function (size) {
