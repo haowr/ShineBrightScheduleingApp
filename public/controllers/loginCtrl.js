@@ -108,8 +108,9 @@
                         $timeout(function(){
 
                             $location.path('/clientprofile')
-                            $rootScope.atHome           = false;
                             $scope.successfulLogin      = false;
+                            $rootScope.atHome           = false;
+
 
 
 
