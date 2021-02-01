@@ -5,7 +5,7 @@
   
  
 
-  <div class="row animated fadeIn" ng-show="!loading">
+  <div class="row animated fadeIn" ng-show="!loading && !successfulLogin">
   
     <div class = "col s2"></div>
   
@@ -22,9 +22,7 @@
   
   <br>
 
-
-  
-  <form name="loginForm" ng-submit="loginUser(loginData,loginForm.$valid,loginForm);" class="col s12 center-align animated" ng-show="!loading">
+  <form name="loginForm" ng-submit="loginUser(loginData,loginForm.$valid,loginForm);" class="col s12 center-align animated" ng-show="!loading && !successfulLogin">
       
       <div class="row">
   
