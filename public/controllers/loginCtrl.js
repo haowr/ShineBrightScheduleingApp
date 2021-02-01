@@ -61,10 +61,8 @@
 
                 if (data.data.success) {
 
-                    $scope.loading              = false;
                     $rootScope.payPeriodIcon    = true;
                     $scope.fadein               = true;
-                    $scope.successfulLogin      = true;
 
                    // $scope.shinebrightsuccess.play()
                     $window.localStorage.setItem('_id', data.data.user._id)
@@ -99,6 +97,8 @@
                             $rootScope.loggedIn     = true;
                             console.log($rootScope.loggedIn)
                             $scope.shinebrightsuccess.play()   
+                            $scope.loading              = false;
+                            $scope.successfulLogin      = true;
 
                             //$window.location.href = "/clientprofile";
                             console.log("here")
@@ -108,7 +108,9 @@
                         $timeout(function(){
 
                             $location.path('/clientprofile')
-                            $rootScope.atHome = false;
+                            $rootScope.atHome           = false;
+                            $scope.successfulLogin      = false;
+
 
 
                         },7000)
