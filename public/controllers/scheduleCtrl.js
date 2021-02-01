@@ -22,6 +22,7 @@
             }
 
         })
+
         
         $scope.schedulePageOpen             = true;
         $scope.infoPageOpen                 = false;
@@ -69,7 +70,12 @@
             
         }
        
-        $scope.openModal();
+        if($window.screen.availWidth > 800){
+
+            $scope.openModal();
+
+
+        }
             
             $scope.loadingBooking           = false;
             $scope.loadingBooking1          = false;
@@ -87,7 +93,7 @@
                 id: ""
             }
             $scope.hour = ""
-/*
+
             $scope.openModal = function (size) {
 
                 if(size == 'small'){
@@ -101,7 +107,7 @@
     
                 }
                 
-            }*/
+            }
     
     
             $scope.openScheduledJobPageMobile = function (currentdate, id, datecondensed) {
