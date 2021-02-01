@@ -70,12 +70,6 @@
         }
        
         $scope.openModal();
-
-            
-
-
-            
-
             
             $scope.loadingBooking           = false;
             $scope.loadingBooking1          = false;

@@ -4564,11 +4564,11 @@
 
                 if (column == '2') {
 
-                    if (!$scope.checkUp9Selected2) {
+                    if (!$scope.checkUp9Selected) {
 
-                        $scope.discovery9Selected2  = false;
-                        $scope.session9Selected2    = false;
-                        $scope.checkUp9Selected2    = true;
+                        $scope.discovery9Selected  = false;
+                        $scope.session9Selected    = false;
+                        $scope.checkUp9Selected     = true;
                         $scope.sessionTitle91       = false;
                         $scope.discoveryTitle91     = false;
                         $scope.checkUpTitle91       = true;
@@ -4705,9 +4705,9 @@
 
                     if (!$scope.discovery9Selected2) {
 
-                        $scope.checkUp9Selected2        = false;
-                        $scope.session9Selected2        = false;
-                        $scope.discovery9Selected2      = true;
+                        $scope.checkUp9Selected       = false;
+                        $scope.session9Selected        = false;
+                        $scope.discovery9Selected      = true;
                         $scope.sessionTitle91           = false;
                         $scope.checkUpTitle91           = false;
                         $scope.discoveryTitle91         = true;
@@ -4846,9 +4846,9 @@
 
                     if (!$scope.session9Selected2) {
 
-                        $scope.checkUp9Selected2    = false;
-                        $scope.discovery9Selected2  = false;
-                        $scope.session9Selected2    = true;
+                        $scope.checkUp9Selected    = false;
+                        $scope.discovery9Selected  = false;
+                        $scope.session9Selected    = true;
                         $scope.sessionTitle91       = true;
                         $scope.discoveryTitle91     = false;
                         $scope.checkUpTitle91       = false;

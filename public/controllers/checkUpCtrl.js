@@ -97,6 +97,9 @@
         $scope.bookCheckUp48 = true;
         $scope.bookCheckUp58 = true;
 
+        $scope.nineOClock = false;
+        $scope.eightOClock = false;
+
         $scope.audio                = new Audio("../audio/shinebrightclick.wav")
         $scope.shinebrighterror     = new Audio("../audio/shinebrighterror.wav");
         $scope.shinebrightloading   = new Audio('../audio/shinebrightloading.wav');
@@ -109,7 +112,27 @@
         }
 
 
-            $scope.currentHour = $window.localStorage.getItem('currentHour')
+            $scope.currentHour = $window.localStorage.getItem('hour')
+
+            $scope.condition = { show : ($scope.test  === 'test1')};
+
+            console.log($window.localStorage.getItem('currentDate') == "2020-22-30")
+            console.log($window.localStorage.getItem('hour') == "nine")
+
+            if($window.localStorage.getItem('hour') == 'nine'){
+
+                $scope.nineOClock = true;
+                $scope.eightOClock = false;
+                console.log("This Should Run...")
+                
+            }else{
+
+                $scope.eightOClock = true;
+                $scope.nineOClock = false;
+
+
+            }
+            console.log("currentHour", $scope.currentHour)
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
 

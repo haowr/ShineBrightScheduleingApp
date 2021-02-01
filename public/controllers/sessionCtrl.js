@@ -1805,7 +1805,7 @@
     
     
                             $scope.dateData.hour    = hour;
-                            $scope.dateData.id      = $scope.id
+                            $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
                             $scope.bookSession      = false;
                             $scope.loadingBooking4  = true;
@@ -1831,6 +1831,8 @@
                                     $scope.dateData.dateInfoNextHour        = data.data.date['nine'].state
     
                                     User.updateDateNextHour($scope.dateData).then(function (data) {
+
+                                        console.log(data.data.message)
     
                                         $scope.dateDataForUser.date = $scope.currentDate;
     
@@ -1918,8 +1920,6 @@
                                     data.data.date['nine'].state[0]          = 3;
                                     data.data.date['nine'].state[1]          = 3;
                                     data.data.date['nine'].state[2]          = 3;
-    
-    
     
                                     $scope.dateData.dateInfo                = data.data.date[hour].state
                                     $scope.dateData.nexthour                = 'nine'
@@ -2010,7 +2010,7 @@
                             $scope.sessionData.time == "2:50pm" || $scope.sessionData.time == "3:50pm") {
     
                             $scope.dateData.hour    = hour;
-                            $scope.dateData.id      = $scope.id;
+                            $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
                             $scope.bookSession      = false;
                             $scope.loadingBooking5  = true;
@@ -2034,7 +2034,7 @@
                                     $scope.dateData.nexthour                = 'nine';
                                     $scope.dateData.dateInfoNextHour        = data.data.date['nine'].state;
     
-                                    User.updateDateNextHour($scope.dateData).then(function (data) {
+                                    User.updateDateNextHour("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                                         $scope.dateDataForUser.date = $scope.currentDate;
     
@@ -2132,7 +2132,7 @@
                                     $scope.dateData.nexthour                = 'ten';
                                     $scope.dateData.dateInfoNextHour        = data.data.date['ten'].state;
     
-                                    User.updateDateNextHour($scope.dateData).then(function (data) {
+                                    User.updateDateNextHour("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
                                         $scope.dateDataForUser.date = $scope.currentDate;
     

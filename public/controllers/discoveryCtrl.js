@@ -110,7 +110,7 @@
 
                 $scope.globalDateInformation = data.data.date;
 
-                    if ($scope.hour == "eight") {
+                    if ($scope.currentHour == "eight") {
 
                         console.log("Discovery Date Information...")
                         console.log($scope.globalDateInformation['eight'])
