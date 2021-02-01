@@ -5,7 +5,7 @@
   
  
 
-  <div class="row animated fadeIn">
+  <div class="row animated fadeIn" ng-show="!loading">
   
     <div class = "col s2"></div>
   
@@ -55,60 +55,61 @@
           <br>
 
         </div>
-        <div class = "row"></div>
-        <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="successfulLogin">
-          <br>
-          <div class = "col s2"></div>
-    
-          <div class="col s8 green lighten-3 ">
-      
-            <p class=" railway center-align black-text " style="font-size:18px;">Login Successful!</p>
-            <br>
-          </div>
-    
-         <div class = "col s2"></div>
-    
-        </div>
-        <div class = 'row'></div>
-      
-        <div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="failedLogin ">
-          
-          <div class= "col s2"></div>
-    
-          <div class="col s8 red lighten-3">
-            <p class=" railway center-align black-text " style="font-size:18px;">{{errorMsg}}</p>
-            <br>
-          </div>
-    
-          <div class = "col s2"></div>
-          
-        </div>
+
    
   </form>
   
-    
-  
-  <div class="row " ng-show="loading">
-  
-    <div class = "col s2"></div>
-
-    <div class="col s8">
-
-      <div class="center-align">
-
-        <i style="font-size:30px;" class="fa fa-cog fa-spin fa-3x fa-fw "></i>
-
-      </div>
-
-    </div>
-
-    <div class = "col s2"></div>
-
-  </div>
+         
 
   
 </div>
 
+
+<div class = "row"></div>
+<div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="successfulLogin">
+  <br>
+  <div class = "col s2"></div>
+
+  <div class="col s8 green lighten-3 ">
+
+    <p class=" railway center-align black-text " style="font-size:18px;">Login Successful!</p>
+    <br>
+  </div>
+
+ <div class = "col s2"></div>
+
+</div>
+<div class = 'row'></div>
+<div class="row animated " ng-class="{'fadeIn':fadein,'fadeOut':!fadein}" ng-show="failedLogin ">
+  
+  <div class= "col s2"></div>
+
+  <div class="col s8 red lighten-3">
+    <p class=" railway center-align black-text " style="font-size:18px;">{{errorMsg}}</p>
+    <br>
+  </div>
+
+  <div class = "col s2"></div>
+  
+</div>
+
+<div class="row " ng-show="loading">
+
+<div class = "col s2"></div>
+
+<div class="col s8">
+
+<div class="center-align">
+
+<i style="font-size:30px;" class="fa fa-cog fa-spin fa-3x fa-fw "></i>
+
+</div>
+
+</div>
+
+<div class = "col s2"></div>
+
+</div>
 
 <!--
 
