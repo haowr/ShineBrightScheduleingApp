@@ -530,7 +530,7 @@
                                 schedule
                                 </i>
                                 
-                                <span class = "black-text" style = "font-size:20px; text-decoration:underline;">
+                                <span class = "black-text" style = "font-size:22px; text-decoration:underline;">
                                     {{currentBookingTitle}}
                                 </span>
         
@@ -588,38 +588,40 @@
         
                                         <div ng-click= "markAsNotCompleted(currentBooking)">
                                             
-                                        <div class = "row"></div>
-                                        <div class = "col s2"></div>
-                                        <div class= "col s8 center-align"><span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
-        
-                                            {{currentUserBookingsArray[currentBooking].date}}
-    
-                                        </span></div>
-                                        <div class= "col s2">
-                                        
-                                            <i ng-show= "currentUserBookingsArray[currentBooking].completed" class="material-icons green-text"
-                                                style= "font-size:23px; text-decoration:underline;">check</i>
-        
-                                        </div>
-        
-                                        <div class= 'col s12 center-align'>
-        
-                                            <p class= "montserrat animated fadeIn" style= "font-size:20px;">
-        
-                                                {{currentUserBookingsArray[currentBooking].appointmentType}}
-        
-                                            </p>
-        
-                                            <p class= "montserrat animated fadeIn" style= "font-size:20px;">
-        
-                                                {{currentUserBookingsArray[currentBooking].time}}
-        
-                                            </p>
-                                            <p class= "montserrat flow-text" >( Tap To Mark As Incomplete )</p>
+                                                <div class = "row"></div>
+                                                <div class = "col s2"></div>
+                                                <div class= "col s8 center-align">
+                                                    <span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
+                
+                                                    {{currentUserBookingsArray[currentBooking].date}}
+            
+                                                    </span>
+                                                </div>
+                                                <div class= "col s2">
+                                                
+                                                    <i ng-show= "currentUserBookingsArray[currentBooking].completed" class="material-icons green-text"
+                                                        style= "font-size:23px; text-decoration:underline;">check</i>
+                
+                                                </div>
+                
+                                                <div class= 'col s12 center-align'>
+                
+                                                    <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+                
+                                                        {{currentUserBookingsArray[currentBooking].appointmentType}}
+                
+                                                    </p>
+                
+                                                    <p class= "montserrat animated fadeIn" style= "font-size:20px;">
+                
+                                                        {{currentUserBookingsArray[currentBooking].time}}
+                
+                                                    </p>
+                                                    <p class= "montserrat flow-text" >( Tap To Mark As Incomplete )</p>
 
-    
-        
-                                        </div>
+            
+                
+                                                </div>
                                         
                                     
                                         </div>
