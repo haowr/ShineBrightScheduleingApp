@@ -100,7 +100,7 @@
 
                 $scope.inboxOpen                    = true;
                 $scope.composeOpen                  = false;
-                $scope.messabeSubjectCannotBeEmpty  = false;
+                $scope.messageSubjectCannotBeEmpty  = false;
                 $scope.messageBodyCannotBeEmpty     = false;
 
             }
@@ -124,7 +124,7 @@
             if($scope.messageObject.body    !== "" &&
                $scope.messageObject.subject  == ""){
 
-                $scope.messabeSubjectCannotBeEmpty  = true;
+                $scope.messageSubjectCannotBeEmpty  = true;
                 $scope.messageBodyCannotBeEmpty     = false;
 
                 
