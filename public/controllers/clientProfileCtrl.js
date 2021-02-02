@@ -98,8 +98,10 @@
 
             if (!$scope.inboxOpen) {
 
-                $scope.inboxOpen        = true;
-                $scope.composeOpen      = false;
+                $scope.inboxOpen                    = true;
+                $scope.composeOpen                  = false;
+                $scope.messabeSubjectCannotBeEmpty  = false;
+                $scope.messageBodyCannotBeEmpty     = false;
 
             }
 
