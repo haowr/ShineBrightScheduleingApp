@@ -2034,7 +2034,7 @@
                                     $scope.dateData.nexthour                = 'nine';
                                     $scope.dateData.dateInfoNextHour        = data.data.date['nine'].state;
     
-                                    User.updateDateNextHour("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
+                                    User.updateDateNextHour($scope.dateData).then(function (data) {
     
                                         $scope.dateDataForUser.date = $scope.currentDate;
     
