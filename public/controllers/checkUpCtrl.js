@@ -1994,7 +1994,6 @@
             })
 
         
-
         $scope.openBookingPage = function (slot) {
 
             $scope.dateCondensed = $window.localStorage.getItem('dateCondensed')

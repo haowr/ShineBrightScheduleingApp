@@ -64,7 +64,6 @@
                     $rootScope.payPeriodIcon    = true;
                     $scope.fadein               = true;
 
-                   // $scope.shinebrightsuccess.play()
                     $window.localStorage.setItem('_id', data.data.user._id)
                     $window.localStorage.setItem('intakeId', data.data.user._id)
 
@@ -79,11 +78,11 @@
                             $rootScope.createWellness = true;
 
                         }
+
                         $timeout(function () {
 
                             $scope.fadein           = false;
                             $scope.successfulLogin  = false;
-
                             $location.path('/profile/' + data.data.user._id)
 
                         }, 3000)
@@ -94,27 +93,22 @@
 
                             $scope.successfulLogin  = false;
                             $rootScope.loggedIn     = true;
-                            console.log($rootScope.loggedIn)
                             $scope.shinebrightsuccess.play()   
                             $scope.loading              = false;
                             $scope.successfulLogin      = true;
-
-                            //$window.location.href = "/clientprofile";
-                            console.log("here")
 
                         }, 6000)
 
                         $timeout(function(){
 
-                           // $location.path('/clientprofile')
-                              $window.location.href = "/clientprofile";
-
                             $scope.successfulLogin      = false;
+                            $rootScope.loggedIn         = true;
                             $rootScope.atHome           = false;
-                            $scope.fadein           = false;
-
+                            $scope.fadein               = false;
+                            $location.path('/clientprofile')
 
                         },8000)
+
                     } else {
 
                         $timeout(function () {
@@ -149,13 +143,6 @@
 
         }
 
-        //function MyCtrl($scope) {
-            $scope.setDirectiveFn = function(directiveFn) {
-                $scope.directiveFn = directiveFn;
-            };
-        //}
-        //MyCtrl()
-        //console.log($scope.directiveFn)
     })
 
 }());
