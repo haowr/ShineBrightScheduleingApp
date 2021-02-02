@@ -425,7 +425,7 @@ module.exports = function (app) {
 
                                     if (req.body.time == "9:00am - 9:50am") {
                 
-                                        date[req.body.hour].state[0]     = 0;
+                                        date[req.body.hour].state[0]  = 0;
                                         date[req.body.hour].state[1]  = 0;
                                         date[req.body.hour].state[2]  = 0;
                                         date[req.body.hour].state[3]  = 0;
@@ -463,7 +463,8 @@ module.exports = function (app) {
                                         date[req.body.hour].state[req.body.slot +1]  = 0;
                                         date[req.body.hour].state[req.body.slot +2]  = 0;
                                         date[req.body.hour].state[req.body.slot +3]  = 0;
-                                        date[req.body.hour].state[req.body.slot +4]  = 0;  
+                                        date[req.body.hour].state[req.body.slot +4]  = 0;
+                                        data['nine'].state[0]                        = 0;  
                                         
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -533,7 +534,9 @@ module.exports = function (app) {
                                         date[req.body.hour].state[req.body.slot +1] = 0;
                                         date[req.body.hour].state[req.body.slot +2] = 0;
                                         date[req.body.hour].state[req.body.slot +3] = 0;
-                                        date['nine'].state[req.body.slot]  = 0;  
+                                        date['nine'].state[req.body.slot]           = 0;  
+                                        data['nine'].state[1]                       = 0;  
+
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -609,7 +612,9 @@ module.exports = function (app) {
                                         date[req.body.hour].state[req.body.slot +1]   = 0;
                                         date[req.body.hour].state[req.body.slot +2]   = 0;
                                         date['nine'].state[req.body.slot]    = 0;
-                                        date['nine'].state[req.body.slot +1] = 0;  
+                                        date['nine'].state[req.body.slot +1] = 0;
+                                        data['nine'].state[2]                 = 0;  
+  
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -683,11 +688,13 @@ module.exports = function (app) {
  
                                          }
         
-                                        date[req.body.hour].state[req.body.slot]      = 0;
-                                        date[req.body.hour].state[req.body.slot +1]   = 0;
-                                        date['nine'].state[req.body.slot]    = 0;
-                                        date['nine'].state[req.body.slot +1] = 0;
-                                        date['nine'].state[req.body.slot +2] = 0;    
+                                        date[req.body.hour].state[req.body.slot]        = 0;
+                                        date[req.body.hour].state[req.body.slot +1]     = 0;
+                                        date['nine'].state[req.body.slot]               = 0;
+                                        date['nine'].state[req.body.slot +1]            = 0;
+                                        date['nine'].state[req.body.slot +2]            = 0;  
+                                        data['nine'].state[3]                           = 0;  
+  
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -768,6 +775,8 @@ module.exports = function (app) {
                                         date['nine'].state[req.body.slot +1]            = 0;
                                         date['nine'].state[req.body.slot +2]            = 0;
                                         date['nine'].state[req.body.slot +3]            = 0; 
+                                        data['nine'].state[4]                           = 0;  
+
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -1021,6 +1030,8 @@ module.exports = function (app) {
                                         date[req.body.hour].state[req.body.slot]    = 0;
                                         date[req.body.hour].state[req.body.slot +1] = 0;
                                         date[req.body.hour].state[req.body.slot +2] = 0; 
+                                        data['nine'].state[0]                        = 0;  
+
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -1092,6 +1103,7 @@ module.exports = function (app) {
                                         date[req.body.hour].state[req.body.slot]    = 0;
                                         date[req.body.hour].state[req.body.slot +1] = 0;
                                         date['nine'].state[req.body.slot]  = 0;    
+                                        data['nine'].state[1]
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
@@ -1163,8 +1175,11 @@ module.exports = function (app) {
                                          }
         
                                         date[req.body.hour].state[req.body.slot]        = 0;
-                                        date['ten'].state[req.body.slot]                = 0;
-                                        date['ten'].state[req.body.slot +1]             = 0;   
+                                        data['nine'].state[0]                        = 0;  
+                                        data['nine'].state[1]                        = 0;  
+                                        data['nine'].state[2]                        = 0;  
+
+ 
 
                                         Date.findOneAndUpdate({_id: "5bf4f0a4b8f53129ecbc13a0" }, { $set: {eight: date['eight'] , nine: date['nine']} }, {new:true}, function(err,date){
         
