@@ -13,8 +13,8 @@ canvas{
     display:block;
     top:0;
     z-index:-1;
-    height:100mvh;
-    width:100mvh;
+    height:100%;
+    width:100%;
     background: url('./kimssss.svg') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
