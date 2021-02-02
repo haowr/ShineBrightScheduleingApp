@@ -4573,6 +4573,7 @@
                         $scope.discoveryTitle91     = false;
                         $scope.checkUpTitle91       = true;
                         $scope.audio.play()
+                        console.log('oy')
 
                     }
 
@@ -4711,7 +4712,7 @@
                         $scope.sessionTitle91           = false;
                         $scope.checkUpTitle91           = false;
                         $scope.discoveryTitle91         = true;
-
+                        console.log("oyyy")
                         $scope.audio.play()
 
                     }
