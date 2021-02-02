@@ -220,7 +220,7 @@
     controls.noPan = true;
     controls.update();
 
-   // window.addEventListener( 'resize', onWindowResize, false );
+    window.addEventListener( 'resize', onWindowResize, false );
 
     console.log(renderer.domElement)
 

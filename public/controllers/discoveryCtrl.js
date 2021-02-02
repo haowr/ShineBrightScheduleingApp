@@ -114,21 +114,21 @@
 
                         console.log("Discovery Date Information...")
                         console.log($scope.globalDateInformation['eight'])
-                        console.log($scope.globalDateInformation[$scope.hour].state)
+                   
 
-                        if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
 
                             $scope.bookDiscovery8 = false;
 
                         }
-                        if ($scope.globalDateInformation[$scope.hour].state[1] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
 
                             $scope.bookDiscovery8 = false;
                             $scope.bookDiscovery18 = false;
 
                         }
 
-                        if ($scope.globalDateInformation[$scope.hour].state[2] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
 
                             $scope.bookDiscovery8 = false;
                             $scope.bookDiscovery18 = false;
@@ -136,7 +136,7 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.hour].state[3] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
 
                             $scope.bookDiscovery18 = false;
                             $scope.bookDiscovery28 = false;
@@ -144,7 +144,7 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.hour].state[4] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
 
                             $scope.bookDiscovery28 = false;
                             $scope.bookDiscovery38 = false;
@@ -152,14 +152,14 @@
 
 
                         }
-                        if ($scope.globalDateInformation[$scope.hour].state[5] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
 
                             $scope.bookDiscovery38 = false;
                             $scope.bookDiscovery48 = false;
                             $scope.bookDiscovery58 = false;
 
                         }
-                        if ($scope.globalDateInformation[$scope.hour].state[0] == 3) {
+                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
 
                             $scope.bookDiscovery58 = false;
                             $scope.bookDiscovery48 = false;
@@ -168,6 +168,7 @@
                         }
 
                     }
+
                     if ($scope.currentHour == "nine") {
 
                         if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
