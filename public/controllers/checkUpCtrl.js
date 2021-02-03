@@ -52,6 +52,10 @@
         $scope.bookCheckUp9 = true;
         $scope.bookCheckUp18 = true;
         $scope.bookCheckUp19 = true;
+        $scope.bookCheckUp29 = true;
+        $scope.bookCheckUp39 = true;
+        $scope.bookCheckUp49 = true;
+        $scope.bookCheckUp59 = true;
         $scope.bookCheckUp28 = true;
         $scope.bookCheckUp29 = true;
         $scope.bookCheckUp39 = true;
@@ -1027,11 +1031,9 @@
     
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
-    
                         $scope.loadingBooking4   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
-    
     
                             data.data.date[hour].state[4]   = 2;
                             $scope.dateData.dateInfo        = data.data.date[hour].state
@@ -1223,216 +1225,6 @@
 
                 $scope.globalDateInformation = data.data.date;
 
-
-                if ($scope.appointmentType == "discovery") {
-
-
-                    if ($scope.currentHour == "eight") {
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
-
-                            $scope.bookDiscovery8 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
-
-                            $scope.bookDiscovery8 = false;
-                            $scope.bookDiscovery18 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
-
-                            $scope.bookDiscovery8 = false;
-                            $scope.bookDiscovery18 = false;
-                            $scope.bookDiscovery28 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
-
-                            $scope.bookDiscovery18 = false;
-                            $scope.bookDiscovery28 = false;
-                            $scope.bookDiscovery38 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
-
-                            $scope.bookDiscovery28 = false;
-                            $scope.bookDiscovery38 = false;
-                            $scope.bookDiscovery48 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
-
-                            $scope.bookDiscovery38 = false;
-                            $scope.bookDiscovery48 = false;
-                            $scope.bookDiscovery58 = false;
-
-                        }
-                        if ($scope.globalDateInformation['nine'].state[0] == 3) {
-
-                            $scope.bookDiscovery58 = false;
-                            $scope.bookDiscovery48 = false;
-
-
-                        }
-
-                    }
-                    if ($scope.currentHour == "nine") {
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
-
-                            $scope.bookDiscovery9 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
-
-                            $scope.bookDiscovery9 = false;
-                            $scope.bookDiscovery19 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
-
-                            $scope.bookDiscovery9  = false;
-                            $scope.bookDiscovery19 = false;
-                            $scope.bookDiscovery29 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
-
-                            $scope.bookDiscovery19 = false;
-                            $scope.bookDiscovery29 = false;
-                            $scope.bookDiscovery39 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
-
-                            $scope.bookDiscovery29 = false;
-                            $scope.bookDiscovery39 = false;
-                            $scope.bookDiscovery49 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
-
-                            $scope.bookDiscovery39 = false;
-                            $scope.bookDiscovery49 = false;
-                            $scope.bookDiscovery59 = false;
-
-                        }
-
-                    }
-
-                }
-                if ($scope.appointmentType == "discovery") {
-
-
-                    if ($scope.currentHour == "eight") {
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
-
-                            $scope.bookDiscovery8 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 2) {
-
-                            $scope.bookDiscovery8 = false;
-                            $scope.bookDiscovery18 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
-
-                            $scope.bookDiscovery8 = false;
-                            $scope.bookDiscovery18 = false;
-                            $scope.bookDiscovery28 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
-
-                            $scope.bookDiscovery18 = false;
-                            $scope.bookDiscovery28 = false;
-                            $scope.bookDiscovery38 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 2) {
-
-                            $scope.bookDiscovery28 = false;
-                            $scope.bookDiscovery38 = false;
-                            $scope.bookDiscovery48 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 2) {
-
-                            $scope.bookDiscovery38 = false;
-                            $scope.bookDiscovery48 = false;
-                            $scope.bookDiscovery58 = false;
-
-                        }
-                        if ($scope.globalDateInformation['nine'].state[0] == 2) {
-
-                            $scope.bookDiscovery58 = false;
-                            $scope.bookDiscovery48 = false;
-
-
-                        }
-
-                    }
-                    if ($scope.currentHour == "nine") {
-
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
-
-                            $scope.bookDiscovery9 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 2) {
-
-                            $scope.bookDiscovery9 = false;
-                            $scope.bookDiscovery19 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
-
-                            $scope.bookDiscovery9  = false;
-                            $scope.bookDiscovery19 = false;
-                            $scope.bookDiscovery29 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
-
-                            $scope.bookDiscovery19 = false;
-                            $scope.bookDiscovery29 = false;
-                            $scope.bookDiscovery39 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 2) {
-
-                            $scope.bookDiscovery29 = false;
-                            $scope.bookDiscovery39 = false;
-                            $scope.bookDiscovery49 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 2) {
-
-                            $scope.bookDiscovery39 = false;
-                            $scope.bookDiscovery49 = false;
-                            $scope.bookDiscovery59 = false;
-
-                        }
-
-                    }
-
-                }
-
-
                     if ($scope.currentHour == "eight") {
 
                         if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
@@ -1486,6 +1278,7 @@
                         if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
 
                             $scope.bookCheckUp29 = false;
+                            console.log("THIS SHOULDN'T RUN THERE ARE NO 3s")
 
                         }
                         if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
@@ -1513,13 +1306,16 @@
                             $scope.bookCheckUp29 = false;
                             $scope.bookCheckUp19 = false;
                             $scope.bookCheckUp29 = false;
+                            console.log("THIS SHOULDN'T RUN NO THREES")
 
                         }
                         
 
                     }
 
+                    
                     if ($scope.currentHour == "eight") {
+                        
 
                         if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
 
@@ -1535,6 +1331,7 @@
                         if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
 
                             $scope.bookCheckUp28 = false;
+                            console.log("shouldn't be here...")
 
                         }
                         if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
@@ -1556,6 +1353,8 @@
                     }
                     if ($scope.currentHour == "nine") {
 
+                        console.log($scope.globalDateInformation[$scope.currentHour].state[2])
+
                         if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
 
                             $scope.bookCheckUp9 = false;
@@ -1564,12 +1363,14 @@
                         if ($scope.globalDateInformation[$scope.currentHour].state[1] == 2) {
 
                             $scope.bookCheckUp19 = false;
+                            console.log("this shouldn't run")
 
                         }
 
                         if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
 
                             $scope.bookCheckUp29 = false;
+                            console.log("THIS SHOULDN'T RUN")
 
                         }
                         if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
@@ -1578,6 +1379,8 @@
 
                         }
                         if ($scope.globalDateInformation[$scope.currentHour].state[4] == 2) {
+                            console.log("$scope.bookCheckUp29", $scope.bookCheckUp29)
+
 
                             $scope.bookCheckUp49 = false;
 
@@ -1588,408 +1391,14 @@
 
                         }
 
-                        if (data.data.date[$scope.currentHour].state[3] === 2) {
-
-                            $scope.discovery800AMSelected = false;
-                            $scope.bookCheckUp19 = false;
-                            $scope.bookCheckUp29 = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookCheckUp29 = false;
-                            $scope.bookCheckUp19 = false;
-                            $scope.bookCheckUp29 = false;
-
-                        }
+           
 
                     }
+                    
 
-                
-                if ($scope.appointmentType == "session") { 
+                    console.log("$scope.bookCheckUp29", $scope.bookCheckUp29)
 
 
-                    if ($scope.currentHour == "eight") {
-
-
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                       
-                        }
-
-                        
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 0 &&
-                            $scope.globalDateInformation[$scope.currentHour].state[3] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-                                $scope.bookSession38 = true;
-                                $scope.bookSession28 = true;
-
-                        }
-                        if (
-                            $scope.globalDateInformation[$scope.currentHour].state[3] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-                                $scope.bookSession38 = true;
-
-                        }
-                        if ( 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[2]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[2]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[3]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[4]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-
-                        }
-
-                        if ($scope.globalDateInformation['nine'].state[0] == 3) {
-
-                            $scope.bookSession58 = false;
-                            $scope.bookSession48 = false;
-                            $scope.bookSession38 = false;
-                            $scope.bookSession28 = false;
-
-                        }
-                    }
-
-                    if ($scope.currentHour == "nine") {
-
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 3) {
-
-                            $scope.bookSession9 = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 3) {
-
-
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 3) {
-
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 3) {
-
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 3) {
-
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 3) {
-
-                            $scope.bookSession59 = false;
-
-
-                        }
-
-                        if (data.data.date[$scope.currentHour].state[3] === 3) {
-
-                            $scope.discovery800AMSelected = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookCheckUp19 = false;
-                            $scope.bookCheckUp29 = false;
-
-                        }
-
-                    }
-
-                }
-                if ($scope.appointmentType == "session") { 
-
-
-                    if ($scope.currentHour == "eight") {
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 2) {
-
-                            $scope.bookSession8     = false;
-                            $scope.bookSession18    = false;
-                            $scope.bookSession28    = false;    
-                            $scope.bookSession38    = false;
-                            $scope.bookSession48    = false;
-                            $scope.bookSession58    = false;
-
-                       
-                        }
-
-                        
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 0 &&
-                            $scope.globalDateInformation[$scope.currentHour].state[3] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-                                $scope.bookSession38 = true;
-                                $scope.bookSession28 = true;
-
-                        }
-                        if (
-                            $scope.globalDateInformation[$scope.currentHour].state[3] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-                                $scope.bookSession38 = true;
-
-                        }
-                        if ( 
-                            $scope.globalDateInformation[$scope.currentHour].state[4] == 0 && 
-                            $scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[2]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-                                $scope.bookSession48 = true;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 0 &&  
-                            $scope.globalDateInformation['nine'].state[0]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[1]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[2]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[3]      == 0 &&
-                            $scope.globalDateInformation['nine'].state[4]      == 0 ) {
-
-                                $scope.bookSession58 = true;
-
-                        }
-
-                        if ($scope.globalDateInformation['nine'].state[0] == 2) {
-
-                            $scope.bookSession58 = false;
-                            $scope.bookSession48 = false;
-                            $scope.bookSession38 = false;
-                            $scope.bookSession28 = false;
-
-                        }
-                    }
-
-                    if ($scope.currentHour == "nine") {
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[0] == 2) {
-
-                            $scope.bookSession9 = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[1] == 2) {
-
-
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-                        }
-
-                        if ($scope.globalDateInformation[$scope.currentHour].state[2] == 2) {
-
-                            $scope.bookSession29 = false;
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[3] == 2) {
-
-                            $scope.bookSession39 = false;
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[4] == 2) {
-
-                            $scope.bookSession49 = false;
-                            $scope.bookSession59 = false;
-
-                        }
-                        if ($scope.globalDateInformation[$scope.currentHour].state[5] == 2) {
-
-                            $scope.bookSession59 = false;
-
-
-                        }
-
-                        if (data.data.date[$scope.currentHour].state[3] === 2) {
-
-                            $scope.discovery800AMSelected = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookSession19 = false;
-                            $scope.bookSession29 = false;
-                            $scope.bookCheckUp19 = false;
-                            $scope.bookCheckUp29 = false;
-
-                        }
-
-                    }
-
-                }
 
             })
 
