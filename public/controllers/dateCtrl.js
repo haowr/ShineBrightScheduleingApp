@@ -3255,6 +3255,20 @@ if (data.data.date['eight'].state[4] == 3 &&
             $scope.checkUpFull9         = false;
 
         }
+        if (data.data.date['nine'].state[0] == 0 && data.data.date['nine'].state[1] == 0 && data.data.date['nine'].state[2] == 2 && data.data.date['nine'].state[3] == 0
+        && data.data.date['nine'].state[4] == 0 && data.data.date['nine'].state[5] == 0) {
+
+            $scope.sessionAlmostFull9   = false;
+            $scope.discoveryAvailable9  = false;
+            $scope.checkUpAvailable9    = true;
+            $scope.sessionFull9         = true;
+            $scope.sessionAvailable9    = false;
+            $scope.discoveryFull9       = false;
+            $scope.discoveryAlmostFull9 = true;
+            $scope.checkUpAlmostFull9   = false;
+            $scope.checkUpFull9         = false;
+
+        }
 
         // FIX LOGIC IN CHECKUPCONTROLLER BRD...//
 
