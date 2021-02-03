@@ -95,7 +95,7 @@
             console.log("Oy")
         }
         $scope.openInbox = function () {
-
+            $scope.shinebrighttap.play()
             if (!$scope.inboxOpen) {
 
                 $scope.inboxOpen                    = true;
@@ -110,6 +110,8 @@
         $scope.submitMessage2 = function () {
 
             console.log("oy")
+            $scope.shinebrighttap.play()
+
             if($scope.messageObject.subject == ""){
 
                 $scope.messageSubjectCannotBeEmpty  = true;
@@ -214,6 +216,7 @@
         }
 
         $scope.openCompose = function () {
+            $scope.shinebrighttap.play()
 
             if (!$scope.composeOpen) {
 
