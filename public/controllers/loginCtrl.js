@@ -104,10 +104,10 @@
                           
                             //$location.path('/clientprofile')
                             $window.location.href = "/clientprofile";
-                            $scope.successfulLogin      = false;
-                            $rootScope.loggedIn         = true;
-                            $rootScope.atHome           = false;
-                            $scope.fadein               = false;
+                            //$scope.successfulLogin      = false;
+                            //$rootScope.loggedIn         = true;
+                            //$rootScope.atHome           = false;
+                            //$scope.fadein               = false;
 
                         },8000)
 
