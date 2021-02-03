@@ -101,13 +101,13 @@
 
                         $timeout(function(){
 
+                          
+                            //$location.path('/clientprofile')
+                            $window.location.href = "/clientprofile";
                             $scope.successfulLogin      = false;
                             $rootScope.loggedIn         = true;
                             $rootScope.atHome           = false;
                             $scope.fadein               = false;
-                            //$location.path('/clientprofile')
-                            $window.location.href = "/clientprofile";
-
 
                         },8000)
 
