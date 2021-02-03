@@ -380,8 +380,8 @@ return { x: dx, y: dy };
  
 
 
-            scope.init();
-            animate2();
+            //scope.init();
+            //animate2();
 
 
 
