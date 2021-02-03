@@ -105,7 +105,9 @@
                             $rootScope.loggedIn         = true;
                             $rootScope.atHome           = false;
                             $scope.fadein               = false;
-                            $location.path('/clientprofile')
+                            //$location.path('/clientprofile')
+                            $window.location.href = "/clientprofile";
+
 
                         },8000)
 
@@ -117,6 +119,7 @@
                             $scope.successfulLogin  = false;
                             $rootScope.loggedIn     = true;
                             $location.path('/management')
+                            $window.href
 
                         }, 3000)
 
