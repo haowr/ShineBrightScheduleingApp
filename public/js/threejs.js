@@ -207,8 +207,8 @@
     renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
 	renderer.shadowMap.enabled = true;
 
-	renderer.setPixelRatio( window.devicePixelRatio );
-	renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.gammaOutput = true;
 	document.body.appendChild( renderer.domElement );
 
