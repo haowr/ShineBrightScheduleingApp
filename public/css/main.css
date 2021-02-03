@@ -3,7 +3,11 @@ html{
     height:100vh;
     margin:0;
     padding:0;
-
+    background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size:cover;
 
     
 }
@@ -77,15 +81,15 @@ a{
    
         margin:0;
         padding:0;
-        /*
+    
       
-        background: url('./kimssss.svg') no-repeat center center fixed ; 
+        background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
-         background-size: 3840px 2160px;
+         background-size:cover;
         ;
-        */
+    
         
     }
 
