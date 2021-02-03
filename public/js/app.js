@@ -19,12 +19,16 @@ app.controller('qlcCtrl', '$scope', 'Auth' [  function($scope, Auth, $rootScope)
 	$scope.fadein                       = false;
 	$scope.errorMsg                     = false;
 	$rootScope.atHome					 	= true;
+	$scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
 
 console.log("QlhController")
 $scope.closeModal = function(){
 	              $('#modal1').modal('close');
 
 
+}
+$scope.tap = function(){
+	$scope.shinebrighttap.play()
 }
 $scope.test = function(){
 
