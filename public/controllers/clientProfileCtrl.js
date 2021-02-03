@@ -106,6 +106,9 @@
             }
 
         }
+        $scope.tap = function(){
+            $scope.shinebrighttap.play()
+        }
         $scope.submitMessage2 = function () {
 
             console.log("oy")
