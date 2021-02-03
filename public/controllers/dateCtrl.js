@@ -25,7 +25,7 @@
 
         $scope.appointmentType = "";
         $scope.checkUp8Selected     = true;
-        $scope.checkUp9Selected1     = true;
+        $scope.checkUp9Selected     = true;
         $scope.currentDate          = $window.localStorage.getItem('currentDate')
         $scope.checkUpTitle80       = true;
         $scope.discoveryTitle80     = false;
