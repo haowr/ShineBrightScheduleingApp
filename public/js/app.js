@@ -28,6 +28,7 @@ $scope.closeModal = function(){
 
 }
 $scope.tap = function(){
+	console.log("clickeds")
 	$scope.shinebrighttap.play()
 }
 $scope.test = function(){

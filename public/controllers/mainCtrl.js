@@ -27,6 +27,10 @@
             $scope.shinebrighterror.play()
 
        }
+       $scope.tap = function(){
+        console.log("clickeds")
+        $scope.shinebrighttap.play()
+    }
        $scope.select                 = function(){
 
         $scope.shinebrighttap.play()
