@@ -2,16 +2,16 @@ html{
     min-height: -webkit-fill-available;
     margin:0;
     padding:0;
-
-    
-}
-body{
     background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
      background-size:cover;
      
+    
+}
+body{
+  
     ;
 }
 
@@ -77,16 +77,7 @@ a{
 
     /* STYLES HERE */
 
-    html{
-   
-        margin:0;
-        padding:0;
-    
-      
-      
-    
-        
-    }
+
 
 
 
