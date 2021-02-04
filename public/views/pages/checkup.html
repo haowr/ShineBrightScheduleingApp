@@ -818,15 +818,16 @@
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp39" ng-click="selectTime('9:30')" class = "col s4 center-align  " >
+                            <div  ng-click="selectTime('9:30')" class = "col s4 center-align  " >
         
-                                <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
+                                <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp930AMIsBooked, 
+                                'red-text':!bookCheckUp39,'red-text': loadingBooking4,'green-text':!checkUp930AMIsBooked && bookCheckUp39}">schedule</i>
         
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp930AMSelected, 'border':checkUp930AMSelected}"></div>
+
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking39,'shake':loadingBooking39}" >9:30AM</p>
         
-                                    <p ng-show="loadingBooking3" class = "montserrat  " style="font-size:30px;">9:30AM</p>
-                                    <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
-        
+                                
                             </div>
         
                  
