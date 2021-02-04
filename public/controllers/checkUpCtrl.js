@@ -668,7 +668,7 @@
 
                         console.log("Oy")
     
-                        $scope.loadingBooking   = true;
+                        ///scope.loadingBooking   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -760,7 +760,7 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking1   = true;
+                        //$scope.loadingBooking1   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -852,7 +852,7 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking2   = true;
+                        //$scope.loadingBooking2   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -944,7 +944,7 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking3   = true;
+                       // $scope.loadingBooking3   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1126,7 +1126,7 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking5   = true;
+                        //$scope.loadingBooking5   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     

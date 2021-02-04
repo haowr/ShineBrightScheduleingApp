@@ -8,10 +8,10 @@ html{
 body{
   
     background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-     background-size:cover;
+    -webkit-background-size: stretch;
+    -moz-background-size: stretch;
+    -o-background-size: stretch;
+     background-size:stretch;
 }
 
 canvas{
