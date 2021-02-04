@@ -149,15 +149,7 @@
                 controllerAs: 'profile'
 
             })
-            .when('/contact', {
-                templateUrl: '../views/pages/contact.html',
-                name: "QLH | SERVICES",
-                resolve: {
-                    init: function ($route) {
-                        console.log("index")
-                    }
-                }
-            })
+       
          
             .otherwise({
                 redirectTo: '/'
