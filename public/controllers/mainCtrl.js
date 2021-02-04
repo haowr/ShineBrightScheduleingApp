@@ -22,7 +22,7 @@
        $scope.shinebrighttap                = new Audio('../audio/shinebrighttap.wav');
 
        console.log($window.innerHeight)
-        $scope.windowHeight = $window.innerHeight
+        $rootScope.windowHeight = $window.innerHeight
 
 
        $scope.error                 = function(){

@@ -14,7 +14,13 @@
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
             console.log($window.innerHeight)
-           // $scope.windowHeight = $window.innerHeight
+            $scope.$watch('windowHeight', function(newValue, oldValue) {
+                if(newValue!==oldValue) {
+                 console.log(newValue);
+                 $scope.windowHeight = 731
+                } 
+             });
+            //$rootScope.windowHeight = 10000
 
             if(!Auth.isLoggedIn()){
 
@@ -986,7 +992,8 @@
 
                                             if($scope.checkUpData.time == "9:30am"){
 
-                                                $scope.bookCheckUp39 = false;
+                                               // $scope.bookCheckUp39 = false;
+                                                console.log("oy")
 
                                             }
     
@@ -1044,7 +1051,7 @@
     
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
-                        $scope.loadingBooking4   = true;
+                    $scope.loadingBooking4   = true;
                             
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1171,7 +1178,7 @@
     
                                             $scope.bookCheckUp58 = false;
                                             $scope.bookCheckUp59 = false;
-                                            //$scope.windowHeight = $window.innerHeight
+                                            $rootScope.windowHeight = $window.innerHeight
 
     
                                             $timeout(function () {
