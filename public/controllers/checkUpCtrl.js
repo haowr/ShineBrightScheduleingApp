@@ -14,7 +14,7 @@
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
             console.log($window.innerHeight)
-            $scope.windowHeight = $window.innerHeight
+           // $scope.windowHeight = $window.innerHeight
 
             if(!Auth.isLoggedIn()){
 
@@ -1171,7 +1171,7 @@
     
                                             $scope.bookCheckUp58 = false;
                                             $scope.bookCheckUp59 = false;
-                                            $scope.windowHeight = $window.innerHeight
+                                            //$scope.windowHeight = $window.innerHeight
 
     
                                             $timeout(function () {
