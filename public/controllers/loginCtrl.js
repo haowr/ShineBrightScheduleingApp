@@ -97,7 +97,7 @@
                             $scope.loading              = false;
                             $scope.successfulLogin      = true;
 
-                        }, 5500)
+                        }, 5700)
 
                         $timeout(function(){
 
