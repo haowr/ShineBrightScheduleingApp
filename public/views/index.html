@@ -486,6 +486,15 @@
 
     }
     );
+
+    var bg = $("html");
+
+function resizeBackground() {
+    bg.height($(window).height());
+}
+
+$(window).resize(resizeBackground);
+resizeBackground();
       $('.modal').modal();
   });
 
