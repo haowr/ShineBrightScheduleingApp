@@ -1051,11 +1051,12 @@
     
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
-                    //$scope.loadingBooking4   = true;
-                            
+                        $scope.loadingBooking49   = true;
+                        //$scope.bookCheckUp49 = false;
+
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
-                            data.data.date[hour].state[4]   = 2;
+                            data.data.date[hour].state[4]   = 0;
                             $scope.dateData.dateInfo        = data.data.date[hour].state
     
                             User.updateDate($scope.dateData).then(function (data) {
@@ -1084,12 +1085,11 @@
     
                                         $timeout(function () {
     
-                                            //$scope.bookCheckUp48 = false;
-                                            $scope.bookCheckUp49 = false;
+                                            $scope.bookCheckUp48 = false;
     
                                             $timeout(function () {
     
-                                                //$scope.loadingBooking4 = false;
+                                               // $scope.loadingBooking4 = false;
                                                 $scope.shinebrightsuccess.play()
     
     
