@@ -23,10 +23,10 @@
 
         })
 
-        $scope.successfulLogin              = true;
+        $scope.successfulLogin              = false;
         $scope.failedLogin                  = false;
         $scope.loading                      = false;
-        $scope.fadein                       = true;
+        $scope.fadein                       = false;
         $scope.errorMsg                     = false;
         $rootScope.atHome                   = true;
 
