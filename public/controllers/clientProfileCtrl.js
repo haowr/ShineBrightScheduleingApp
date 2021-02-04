@@ -74,7 +74,7 @@
         $scope.sessionAvailable3    = true;
         $scope.discoveryAvailable3  = true;
 
-        $scope.messageSent          = true;
+        $scope.messageSent          = false;
 
         $scope.messageObject                = {
             id: "5bff0b83ccf498187c715bd3",
