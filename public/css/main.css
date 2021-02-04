@@ -3,7 +3,12 @@ html{
     height:100vh;
     margin:0;
     padding:0;
-
+    background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size:100vh;
+    ;
     
 }
 body{
@@ -79,12 +84,7 @@ a{
         height:100vh;
     
       
-        background: url('./ShineBrightScheduleBackground.jpg') no-repeat center center fixed ; 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-         background-size:100vh;
-        ;
+     
     
         
     }
