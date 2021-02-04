@@ -23,7 +23,7 @@
 
         })
 
-        $scope.successfulLogin              = false;
+        $scope.successfulLogin              = true;
         $scope.failedLogin                  = false;
         $scope.loading                      = false;
         $scope.fadein                       = false;
