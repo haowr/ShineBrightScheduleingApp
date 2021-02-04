@@ -82,7 +82,7 @@
 
 </head>
 
-<body >
+<body id="body">
 
 <!-- DESKTOP NAV BAR -->
 
@@ -487,10 +487,11 @@
     }
     );
 
-    var bg = $("html");
+    var bg = $("#body");
 
 function resizeBackground() {
     bg.height($(window).height());
+    console.log(bg)
 }
 
 $(window).resize(resizeBackground);
