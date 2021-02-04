@@ -847,7 +847,7 @@
                             <div  ng-click="selectTime('9:40')" class = "col s4 center-align  " >
         
                                 <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp940AMIsBooked, 
-                                'red-text':!bookCheckUp49,'green-text':!checkUp940AMIsBooked && bookCheckUp49}">schedule</i>
+                                'red-text':!bookCheckUp49,'red-text': loadingBooking4,'green-text':!checkUp940AMIsBooked && bookCheckUp49}">schedule</i>
         
                                 <div class = "col s12" style="border:1px solid #000000;"></div>
                                 <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking49,'infinite':loadingBooking49}" >9:40AM</p>
@@ -893,6 +893,7 @@
                         <div class = "col s12 center-align">
         
                             <a ng-click="submitCheckUp('nine')"  class=" blue-grey btn " style="border:2px solid black;">Submit</a>
+
         
                         </div>
         
