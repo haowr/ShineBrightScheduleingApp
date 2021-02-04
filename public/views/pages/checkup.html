@@ -717,86 +717,50 @@
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp9" ng-click="selectTime('9:00',true)" class = "col s4 center-align  " >
         
-                                <i class = "material-icons red-text " ng-class="{'':checkUp900AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
+                            <div  ng-click="selectTime('9:00')" class = "col s4 center-align  " >
         
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
+                                <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp900AMIsBooked, 
+                                'red-text':!bookCheckUp9,'red-text': loadingBooking9,'green-text':!checkUp900AMIsBooked && bookCheckUp9}">schedule</i>
         
-                                <p ng-show="loadingBooking" class = "montserrat  " style="font-size:30px;">9:00AM</p>
-                                <p ng-show="!loadingBooking" class = "montserrat" style="font-size:30px;">9:00AM</p>
-        
-                            
-        
-                            </div>
-        
-                            <div ng-show="bookCheckUp9" ng-click="selectTime('9:00')" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-        
-                                <p ng-show="loadingBooking" class = "montserrat  " style="font-size:30px;">9:00AM</p>
-                                <p ng-show="!loadingBooking" class = "montserrat " style="font-size:30px;">9:00AM</p>
-        
-                            </div>
-        
-                        </a>
-        
-                        <a class="black-text" href="#" onclick="return false" >
-        
-                            <div ng-show="!bookCheckUp19" ng-click="selectTime('9:10',true)" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons red-text " ng-class="{'':checkUp910AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-        
-                                <p ng-show="loadingBooking1" class = "montserrat  " style="font-size:30px;">9:10AM</p>
-                                <p ng-show="!loadingBooking1" class = "montserrat" style="font-size:30px;">9:10AM</p>
-        
-                                
-        
-                            </div>
-        
-                            <div ng-show="bookCheckUp19" ng-click="selectTime('9:10')" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons green-text " ng-class="{'':checkUp910AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp900AMSelected, 'border':checkUp900AMSelected}"></div>
 
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking9,'shake':loadingBooking9}" >9:40AM</p>
         
-                                <p ng-show="loadingBooking1" class = "montserrat  " style="font-size:30px;">9:10AM</p>
-                                <p ng-show="!loadingBooking1" class = "montserrat " style="font-size:30px;">9:10AM</p>
-        
-        
-        
+                                
                             </div>
         
                         </a>
         
                         <a class="black-text" href="#" onclick="return false" >
         
-                            <div ng-show="!bookCheckUp29" ng-click="selectTime('9:20',true)" class = "col s4 center-align  " >
+            
         
-                                <i class = "material-icons red-text " ng-class="{'':checkUp920AMIsBooked}"style="font-size:40px;padding-top:10px;">schedule</i>
+                            <div  ng-click="selectTime('9:10')" class = "col s4 center-align  " >
         
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
+                                <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp910AMIsBooked, 
+                                'red-text':!bookCheckUp19,'red-text': loadingBooking1,'green-text':!checkUp910AMIsBooked && bookCheckUp19}">schedule</i>
         
-                                <p ng-show="loadingBooking2" class = "montserrat  " style="font-size:30px;">9:20AM</p>
-                                <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp910AMSelected, 'border':checkUp910AMSelected}"></div>
+
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking19,'shake':loadingBooking19}" >9:40AM</p>
         
-                            
                                 
                             </div>
         
-                            <div ng-show="bookCheckUp29" ng-click="selectTime('9:20')" class = "col s4 center-align  " >
+                        </a>
         
-                                <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
+                        <a class="black-text" href="#" onclick="return false" >
         
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
         
-                                <p ng-show="loadingBooking2" class = "montserrat  " style="font-size:30px;">9:20AM</p>
-                                <p ng-show="!loadingBooking2" class = "montserrat " style="font-size:30px;">9:20AM</p>
+                            <div  ng-click="selectTime('9:20')" class = "col s4 center-align  " >
         
+                                <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp920AMIsBooked, 
+                                'red-text':!bookCheckUp29,'red-text': loadingBooking29,'green-text':!checkUp920AMIsBooked && bookCheckUp29}">schedule</i>
+        
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp920AMSelected, 'border':checkUp920AMSelected}"></div>
+
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking29,'shake':loadingBooking29}" >9:20AM</p>
         
                                 
                             </div>
@@ -805,18 +769,6 @@
         
         
         
-        
-                            <div ng-show="!bookCheckUp39" ng-click="selectTime('9:30',true)" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons red-text " ng-class="{'':checkUp930AMIsBooked}" style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-        
-                                <p ng-show="loadingBooking3" class = "montserrat  " style="font-size:30px;">9:30AM</p>
-                                <p ng-show="!loadingBooking3" class = "montserrat " style="font-size:30px;">9:30AM</p>
-        
-                                
-                            </div>
         
                             <div  ng-click="selectTime('9:30')" class = "col s4 center-align  " >
         
@@ -835,7 +787,7 @@
         
                       
         
-                            <div  ng-click="selectTime('9:40')" class = "col s4 center-align  " >
+                            <div  ng-click="selectTime('9:10')" class = "col s4 center-align  " >
         
                                 <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp940AMIsBooked, 
                                 'red-text':!bookCheckUp49,'red-text': loadingBooking4,'green-text':!checkUp940AMIsBooked && bookCheckUp49}">schedule</i>
@@ -2020,7 +1972,7 @@
                                         
                                     </div>
                 
-                                    <div ng-show="bookCheckUp48" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                                    <div ng-show="bookCheckUp48" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
                 
                                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
                 
@@ -2723,7 +2675,7 @@
                                         
                                     </div>
                 
-                                    <div ng-show="bookCheckUp48" ng-click="selectTime('9:40')" class = "col s4 center-align animated fadeIn" >
+                                    <div ng-show="bookCheckUp48" ng-click="selectTime('9:10')" class = "col s4 center-align animated fadeIn" >
                 
                                         <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
                 
