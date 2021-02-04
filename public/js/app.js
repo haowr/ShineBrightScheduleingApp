@@ -10,7 +10,7 @@ app.config(function($compileProvider){
 	console.log("App.js Loaded...")
 
 });
-app.controller('qlcCtrl', '$scope', 'Auth' [  function($scope, Auth, $rootScope) {
+app.controller('qlcCtrl', '$scope', 'Auth' [  function($scope, Auth, $rootScope, $window) {
 
 
 	$scope.successfulLogin              = false;
@@ -20,7 +20,7 @@ app.controller('qlcCtrl', '$scope', 'Auth' [  function($scope, Auth, $rootScope)
 	$scope.errorMsg                     = false;
 	$rootScope.atHome					 	= true;
 	$scope.shinebrighttap               = new Audio('../audio/shinebrighttap.wav');
-
+	console.log($window.innerHeight)
 console.log("QlhController")
 $scope.closeModal = function(){
 	              $('#modal1').modal('close');

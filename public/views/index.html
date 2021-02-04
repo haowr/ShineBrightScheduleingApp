@@ -82,7 +82,7 @@
 
 </head>
 
-<body id="body">
+<body id="bodp" ng-style="{height: windowHeight}">
 
 <!-- DESKTOP NAV BAR -->
 
@@ -487,7 +487,9 @@
     }
     );
 
-    var bg = $("#body");
+    var bg = $("#bodp");
+console.log(bg[0])
+console.log(bg[0].height)
 
 function resizeBackground() {
     bg.height($(window).height());

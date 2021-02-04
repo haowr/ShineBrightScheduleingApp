@@ -21,6 +21,9 @@
        $scope.shinebrightsuccess            = new Audio('../audio/shinebrightsuccess.wav');
        $scope.shinebrighttap                = new Audio('../audio/shinebrighttap.wav');
 
+       console.log($window.innerHeight)
+        $scope.windowHeight = $window.innerHeight
+
 
        $scope.error                 = function(){
 
