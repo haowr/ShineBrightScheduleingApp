@@ -31,7 +31,12 @@ canvas{
   
 
 }
-
+.border{
+    border-bottom:2px solid black;
+}
+.noborder{
+    border-bottom:2px solid transparent;
+}
 /* Flash class and keyframe animation */
 .flashit{
     color:#f2f;

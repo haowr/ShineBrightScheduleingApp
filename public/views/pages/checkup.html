@@ -830,27 +830,18 @@
                             </div>
         
                  
-                        <!--
+                        
         
-                            <div ng-show="!bookCheckUp49" ng-click="selectTime('9:40',true)" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons red-text " ng-class="{'':checkUp940AMIsBooked}" style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-
-                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking4,'pulse':loadingBooking4,'infinite':loadingBooking4}" >9:40AM</p>
-
-        
-                                
-                            </div>-->
+                      
         
                             <div  ng-click="selectTime('9:40')" class = "col s4 center-align  " >
         
                                 <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp940AMIsBooked, 
                                 'red-text':!bookCheckUp49,'red-text': loadingBooking4,'green-text':!checkUp940AMIsBooked && bookCheckUp49}">schedule</i>
         
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking49,'infinite':loadingBooking49}" >9:40AM</p>
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp940AMSelected, 'border':checkUp940AMSelected}"></div>
+
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking49,'shake':loadingBooking49}" >9:40AM</p>
         
                                 
                             </div>
@@ -858,34 +849,16 @@
                      
         
                        
+                            <div  ng-click="selectTime('9:50')" class = "col s4 center-align  " >
         
-                            <div ng-show="!bookCheckUp59" ng-click="selectTime('9:50',true)" class = "col s4 center-align  " >
+                                <i class = "material-icons" style="font-size:40px;padding-top:10px;" ng-class="{'red-text':checkUp950AMIsBooked, 
+                                'red-text':!bookCheckUp59,'red-text': loadingBooking5,'green-text':!checkUp950AMIsBooked && bookCheckUp59}">schedule</i>
         
-                                <i class = "material-icons red-text " ng-class="{'':checkUp950AMIsBooked}" style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-        
-                                <p ng-show="loadingBooking5" class = "montserrat  " style="font-size:30px;">9:50AM</p>
-                                <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
-        
-                              
-                                
-                            </div>
-        
-                            <div ng-show="bookCheckUp59" ng-click="selectTime('9:50')" class = "col s4 center-align  " >
-        
-                                <i class = "material-icons green-text" style="font-size:40px;padding-top:10px;">schedule</i>
-        
-                                <div class = "col s12" style="border:1px solid #000000;"></div>
-        
-                                <p ng-show="loadingBooking5" class = "montserrat  " style="font-size:30px;">9:50AM</p>
-                                <p ng-show="!loadingBooking5" class = "montserrat " style="font-size:30px;">9:50AM</p>
-        
+                                <div class = "col s12"  ng-class="{'noborder':!checkUp950AMSelected, 'border':checkUp950AMSelected}"></div>
+
+                                <p  class = "montserrat " style="font-size:30px;" ng-class="{'animated':loadingBooking59,'shake':loadingBooking59}" >9:50AM</p>
         
                                 
-        
-                  
-        
                             </div>
         
           
