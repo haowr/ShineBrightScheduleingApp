@@ -195,7 +195,7 @@
     
         }
      
-		gltf.scene.position.set(0,-1.4,0)
+		gltf.scene.position.set(0,-1.5,0)
 		gltf.scene.rotation.y = Math.PI / 0.50;
 
 	  	console.log(gltf.scene)
