@@ -977,9 +977,18 @@
     
     
                                         $timeout(function () {
-    
-                                            $scope.bookCheckUp38 = false;
-                                            $scope.bookCheckUp39 = false;
+                                            
+                                            if($scope.checkUpData.time == "8:30am"){
+
+                                                $scope.bookCheckUp38 = false;
+
+                                            }
+
+                                            if($scope.checkUpData.time == "9:30am"){
+
+                                                $scope.bookCheckUp39 = false;
+
+                                            }
     
                                             $timeout(function () {
     
