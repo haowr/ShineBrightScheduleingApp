@@ -14,7 +14,7 @@
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
             console.log($window.innerHeight)
-            $scope.windowHeight = $window.innerHeight +150
+            $scope.windowHeight = $window.innerHeight
 
             if(!Auth.isLoggedIn()){
 
