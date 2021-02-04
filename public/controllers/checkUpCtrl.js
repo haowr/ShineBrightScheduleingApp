@@ -654,7 +654,7 @@
 
             $scope.submitCheckUp = function (hour) {
 
-                $scope.windowHeight = $window.innerHeight +150
+                //$scope.windowHeight = $window.innerHeight +150
 
                 if (!$scope.isCurrentlyBooked){
     
