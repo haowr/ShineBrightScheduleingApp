@@ -612,8 +612,12 @@
                                         <div class = "col s12" ng-click= "markAsCompleted(currentBooking)">
                                             
                                         <div class = "col s2"></div>
-                                        <div class= "col s8 center-align">
-                                       </div>
+                                        <div class= "col s8 center-align" style="border-bottom:2px solid grey;">
+                                            <span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
+        
+                                            {{currentUserBookingsArray[currentBooking].date}}
+    
+                                        </span></div>
                                         <div class= "col s2">
                                         
                                             <i ng-show= "!currentUserBookingsArray[currentBooking].completed" class="material-icons"
@@ -629,24 +633,20 @@
         
                                             </span>
                                         -->
-                                        <span class= "montserrat animated fadeIn black-text underline flow-text" style="font-size:18px;">
-        
-                                            {{currentUserBookingsArray[currentBooking].date}}
-    
-                                        </span>
                                             <span class= "montserrat animated fadeIn flow-text" >
         
                                                 {{currentUserBookingsArray[currentBooking].time}}
         
                                             </span>
-                                            <span class= "montserrat flow-text"style="font-size:18px;" >( Tap To Mark As Completed )</span>
-
         
-                            
-                                      
-                                        
-                                    
                                         </div>
+                                        <div class= 'col s12 center-align'>
+        
+                                       
+                                             <span class= "montserrat flow-text"style="font-size:18px;" >( Tap To Mark As Completed )</span>
+ 
+         
+                                         </div>
         
                                         <div class= "col s12 center-align">
         
