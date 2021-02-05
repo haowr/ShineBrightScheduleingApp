@@ -150,21 +150,7 @@
             console.log("currentHour", $scope.currentHour)
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
-            $scope.startInterval = function(){
-
-                $interval(function(){
-
-                    $scope.fadeInLoading = false;
-
-                },500)
-
-                $interval(function(){
-
-                    $scope.fadeInLoading = true;
-
-                },1000)
-
-            }
+ 
 
     // store the interval promise in this variable
     var promise;
@@ -196,11 +182,11 @@
     
       $interval.cancel(promise)
       $interval.cancel(promise2)
+      console.log("this has run..")
 
     };
   
     // starting the interval by default
-    $scope.start();
  
     // stops the interval when the scope is destroyed,
     // this usually happens when a route is changed and 
@@ -1133,6 +1119,7 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
                         //$scope.loadingBooking4   = true;
 
+                        $scope.start();
 
                        
     
@@ -1142,7 +1129,7 @@
 
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
-                            data.data.date[hour].state[4]   = 0;
+                            data.data.date[hour].state[4]   = 2;
                             $scope.dateData.dateInfo        = data.data.date[hour].state
     
                             User.updateDate($scope.dateData).then(function (data) {
