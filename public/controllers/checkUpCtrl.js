@@ -150,6 +150,68 @@
             console.log("currentHour", $scope.currentHour)
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
+            $scope.startInterval = function(){
+
+                $interval(function(){
+
+                    $scope.fadeInLoading = false;
+
+                },500)
+
+                $interval(function(){
+
+                    $scope.fadeInLoading = true;
+
+                },1000)
+
+            }
+
+    // store the interval promise in this variable
+    var promise;
+    var promise2
+  
+    
+    // starts the interval
+    $scope.start = function() {
+      // stops any running interval to avoid two intervals running at the same time
+      $scope.stop(); 
+      
+      // store the interval promise
+   promise =    $interval(function(){
+
+        $scope.fadeInLoading = false;
+
+    },500)
+
+    promise2 = $interval(function(){
+
+        $scope.fadeInLoading = true;
+
+    },1000)
+
+    };
+  
+    // stops the interval
+    $scope.stop = function() {
+    
+      $interval.cancel(promise)
+      $interval.cancel(promise2)
+
+    };
+  
+    // starting the interval by default
+    $scope.start();
+ 
+    // stops the interval when the scope is destroyed,
+    // this usually happens when a route is changed and 
+    // the ItemsController $scope gets destroyed. The
+    // destruction of the ItemsController scope does not
+    // guarantee the stopping of any intervals, you must
+    // be responsible for stopping it when the scope is
+    // is destroyed.
+    $scope.$on('$destroy', function() {
+      $scope.stop();
+    });
 
             $scope.selectTime = function (time, booked) {
 
@@ -1072,17 +1134,7 @@
                         //$scope.loadingBooking4   = true;
 
 
-                        $interval(function(){
-
-                            $scope.fadeInLoading = false;
-
-                        },500)
-
-                        $interval(function(){
-
-                            $scope.fadeInLoading = true;
-
-                        },1000)
+                       
     
                         $scope.bookCheckUp49 = false;
 
