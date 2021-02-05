@@ -121,6 +121,11 @@
         $scope.isCurrentlybooked = false;
 
         $scope.fadeInLoading = true;
+        $scope.fadeInLoading1 = false;
+        $scope.fadeInLoading2 = true;
+        $scope.fadeInLoading3 = true;
+        $scope.fadeInLoading4 = true;
+        $scope.fadeInLoading5 = true;
 
         $scope.checkUpData = {
 
@@ -158,30 +163,85 @@
   
     
     // starts the interval
-    $scope.start = function() {
+    $scope.start = function(hour) {
       // stops any running interval to avoid two intervals running at the same time
       $scope.stop(); 
       
       // store the interval promise
-   promise =    $interval(function(){
+   promise11 =    $interval(function(){
 
         $scope.fadeInLoading = false;
 
     },500)
 
-    promise2 = $interval(function(){
+    promise12 = $interval(function(){
 
         $scope.fadeInLoading = true;
 
     },1000)
+    promise21 =    $interval(function(){
+
+        $scope.fadeInLoading2 = false;
+
+    },500)
+
+    promise22 = $interval(function(){
+
+        $scope.fadeInLoading2 = true;
+
+    },1000)
+
+    promise31 =    $interval(function(){
+
+        $scope.fadeInLoading3 = false;
+
+    },500)
+    promise32 =    $interval(function(){
+
+        $scope.fadeInLoading3 = false;
+
+    },1000)
+
+    promise41 =    $interval(function(){
+
+        $scope.fadeInLoading4 = false;
+
+    },500)
+    promise42 =    $interval(function(){
+
+        $scope.fadeInLoading4 = false;
+
+    },1000)
+
+
+    promise51 =    $interval(function(){
+
+        $scope.fadeInLoading5 = false;
+
+    },500)
+    promise52 =    $interval(function(){
+
+        $scope.fadeInLoading5 = false;
+
+    },1000)
+
+
+
 
     };
   
     // stops the interval
     $scope.stop = function() {
-    
-      $interval.cancel(promise)
-      $interval.cancel(promise2)
+        $interval.cancel(promise11)
+      $interval.cancel(promise12)    
+        $interval.cancel(promise21)
+        $interval.cancel(promise22)        
+      $interval.cancel(promise31)
+      $interval.cancel(promise32)
+      $interval.cancel(promise41)
+      $interval.cancel(promise42)
+      $interval.cancel(promise51)
+      $interval.cancel(promise52)
       console.log("this has run..")
 
     };
@@ -740,8 +800,9 @@
 
                         console.log("Oy")
     
-                        $scope.loadingBooking   = true;
-                            
+                        //$scope.loadingBooking   = true;
+                        $scope.start($scope.checkUpData.time)
+
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
@@ -779,7 +840,8 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking = false;
+                                                //$scope.loadingBooking = false;
+                                                $scope.stop()
                                                 $scope.shinebrightsuccess.play()
     
     
@@ -832,8 +894,8 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking1   = true;
-                            
+                        //$scope.loadingBooking1   = true;
+                          $scope.start()  
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
@@ -871,7 +933,8 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking1 = false;
+                                                //$scope.loadingBooking1 = false;
+                                                $scope.stop()
                                                 $scope.shinebrightsuccess.play()
     
     
@@ -924,8 +987,8 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking2   = true;
-                            
+                       // $scope.loadingBooking2   = true;
+                         $scope.start($scope.checkUpData.time)   
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
@@ -963,8 +1026,9 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking2 = false;
-                                                $scope.shinebrightsuccess.play()
+                                               // $scope.loadingBooking2 = false;
+                                            $scope.stop() 
+                                               $scope.shinebrightsuccess.play()
     
     
                                             }, 500)
@@ -1016,8 +1080,8 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
     
-                        $scope.loadingBooking3   = true;
-                            
+                        //$scope.loadingBooking3   = true;
+                          $scope.start($scope.checkUpData.time)  
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
@@ -1065,7 +1129,8 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking3 = false;
+                                                //$scope.loadingBooking3 = false;
+                                                $scope.start()
                                                 $scope.shinebrightsuccess.play()
     
     
@@ -1119,11 +1184,11 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
                         //$scope.loadingBooking4   = true;
 
-                        $scope.start();
+                        $scope.start($scope.checkUpData.time);
 
                        
     
-                        $scope.bookCheckUp49 = false;
+//$scope.bookCheckUp49 = false;
 
 
 
@@ -1159,6 +1224,7 @@
                                         $timeout(function () {
     
                                             $scope.bookCheckUp48 = false;
+                                            $scope.bookCheckUp49 = false;
     
                                             $timeout(function () {
     
@@ -1215,8 +1281,8 @@
     
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
-                        $scope.loadingBooking5   = true;
-                            
+                        //$scope.loadingBooking5   = true;
+                          $scope.start($scope.checkUpData.time)  
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
     
@@ -1256,7 +1322,8 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking5 = false;
+                                                //$scope.loadingBooking5 = false;
+                                                $scope.stop()
                                                 $scope.shinebrightsuccess.play()
     
     
