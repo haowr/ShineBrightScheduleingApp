@@ -150,7 +150,6 @@
 
             $scope.selectTime = function (time, booked) {
 
-                console.log('Oy')
                 $scope.isCurrentlyBooked      = booked;
     
                 $scope.discovery800AMIsBooked = false;
