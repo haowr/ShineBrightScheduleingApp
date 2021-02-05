@@ -8,7 +8,7 @@
 
     })
 
-    app.controller('discoveryCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window) {
+    app.controller('discoveryCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window,$interval) {
 
         $rootScope.$on('$routeChangeStart', function () {
 
@@ -111,6 +111,149 @@
             console.log("Current Hour", $scope.currentHour)
             $scope.currentDate = $window.localStorage.getItem('currentDate')
 
+
+    // store the interval promise in this variable
+    var promise;
+    var promise2;
+    var promise11, promise12, promise21, promise22, promise31, promise32, promise41, promise42,promise51, promise52
+  
+    
+    // starts the interval
+    $scope.start = function(hour) {
+      // stops any running interval to avoid two intervals running at the same time
+      $scope.stop(); 
+      
+      // store the interval promise
+
+      
+      if (hour == "8:00am" || hour == "9:00am") {
+        promise =    $interval(function(){
+
+            $scope.fadeInLoading = false;
+    
+        },500)
+        promise2 = $interval(function(){
+    
+            $scope.fadeInLoading = true;
+    
+        },1000)
+       
+    
+       } 
+  
+       if (hour == "8:10am" || hour == "9:10am") {
+        promise11 =    $interval(function(){
+
+            $scope.fadeInLoading1 = false;
+    
+        },500)
+        promise12 = $interval(function(){
+    
+            $scope.fadeInLoading1 = true;
+    
+        },1000)
+       
+    
+       }
+      
+    
+    if (hour == "8:20am" || hour == "9:20am") {
+
+        promise21 =    $interval(function(){
+
+            $scope.fadeInLoading2 = false;
+    
+        },500)
+    
+        promise22 = $interval(function(){
+    
+            $scope.fadeInLoading2 = true;
+    
+        },1000)
+
+        console.log("Should be here...")
+    
+    
+    }
+    if (hour == "8:30am" || hour == "9:30am") {
+
+        promise31 =    $interval(function(){
+
+            $scope.fadeInLoading3 = false;
+    
+        },500)
+
+        promise32 =    $interval(function(){
+    
+            $scope.fadeInLoading3 = true;
+    
+        },1000)
+
+    
+    }
+    if (hour == "8:40am" || hour == "9:40am") {
+
+        promise41 =    $interval(function(){
+
+            $scope.fadeInLoading4 = false;
+    
+        },500)
+        promise42 =    $interval(function(){
+    
+            $scope.fadeInLoading4 = true;
+    
+        },1000)
+    
+    
+    }
+    if (hour == "8:50am" || hour == "9:50am") {
+
+    promise51 =    $interval(function(){
+
+        $scope.fadeInLoading5 = false;
+
+    },500)
+    promise52 =    $interval(function(){
+
+        $scope.fadeInLoading5 = true;
+
+    },1000)
+
+}
+
+
+    };
+
+    // stops the interval
+    $scope.stop = function() {
+        $interval.cancel(promise)
+        $interval.cancel(promise2)  
+        $interval.cancel(promise11)
+      $interval.cancel(promise12)    
+        $interval.cancel(promise21)
+        $interval.cancel(promise22)        
+      $interval.cancel(promise31)
+      $interval.cancel(promise32)
+      $interval.cancel(promise41)
+      $interval.cancel(promise42)
+      $interval.cancel(promise51)
+      $interval.cancel(promise52)
+      console.log("this has run..")
+
+    };
+    //$scope.start()
+    // starting the interval by default
+ 
+    // stops the interval when the scope is destroyed,
+    // this usually happens when a route is changed and 
+    // the ItemsController $scope gets destroyed. The
+    // destruction of the ItemsController scope does not
+    // guarantee the stopping of any intervals, you must
+    // be responsible for stopping it when the scope is
+    // is destroyed.
+    $scope.$on('$destroy', function() {
+      $scope.stop();
+    });
 
             User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
