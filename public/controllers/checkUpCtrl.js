@@ -1175,7 +1175,8 @@
     
                                             $timeout(function () {
     
-                                                $scope.loadingBooking4 = false;
+                                                //$scope.loadingBooking4 = false;
+                                                $scope.stop()
                                                 $scope.shinebrightsuccess.play()
     
     
