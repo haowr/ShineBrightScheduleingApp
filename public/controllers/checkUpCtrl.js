@@ -160,6 +160,7 @@
     // store the interval promise in this variable
     var promise;
     var promise2
+    var promise11, promise12, promise21, promise22, promise31, promise32, promise41, promise42,promise51, promise52
   
     
     // starts the interval
@@ -168,51 +169,72 @@
       $scope.stop(); 
       
       // store the interval promise
-   promise11 =    $interval(function(){
 
-        $scope.fadeInLoading = false;
+      if (hour == "8:00am" || hour == "9:00am") {
+  
+       if (hour == "8:10am" || hour == "9:10am") {
 
-    },500)
+        promise11 =    $interval(function(){
 
-    promise12 = $interval(function(){
+            $scope.fadeInLoading = false;
+    
+        },500)
+        promise12 = $interval(function(){
 
-        $scope.fadeInLoading = true;
+            $scope.fadeInLoading = true;
+    
+        },1000)
+    
+       }
+      
+    }
+    if (hour == "8:20am" || hour == "9:20am") {
 
-    },1000)
-    promise21 =    $interval(function(){
+        promise21 =    $interval(function(){
 
-        $scope.fadeInLoading2 = false;
+            $scope.fadeInLoading2 = false;
+    
+        },500)
+    
+        promise22 = $interval(function(){
+    
+            $scope.fadeInLoading2 = true;
+    
+        },1000)
+    
+    
+    }
+    if (hour == "8:30am" || hour == "9:30am") {
 
-    },500)
+        promise31 =    $interval(function(){
 
-    promise22 = $interval(function(){
+            $scope.fadeInLoading3 = false;
+    
+        },500)
+        promise32 =    $interval(function(){
+    
+            $scope.fadeInLoading3 = false;
+    
+        },1000)
 
-        $scope.fadeInLoading2 = true;
+    
+    }
+    if (hour == "8:40am" || hour == "9:40am") {
 
-    },1000)
+        promise41 =    $interval(function(){
 
-    promise31 =    $interval(function(){
-
-        $scope.fadeInLoading3 = false;
-
-    },500)
-    promise32 =    $interval(function(){
-
-        $scope.fadeInLoading3 = false;
-
-    },1000)
-
-    promise41 =    $interval(function(){
-
-        $scope.fadeInLoading4 = false;
-
-    },500)
-    promise42 =    $interval(function(){
-
-        $scope.fadeInLoading4 = false;
-
-    },1000)
-
+            $scope.fadeInLoading4 = false;
+    
+        },500)
+        promise42 =    $interval(function(){
+    
+            $scope.fadeInLoading4 = false;
+    
+        },1000)
+    
+    
+    }
+    if (hour == "8:50am" || hour == "9:50am") {
 
     promise51 =    $interval(function(){
 
@@ -224,6 +246,17 @@
         $scope.fadeInLoading5 = false;
 
     },1000)
+
+    
+    }
+
+
+
+  
+
+ 
+
+
 
 
 
