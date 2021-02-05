@@ -8,14 +8,12 @@
 
     })
 
-    app.controller('sessionCtrl', function ($rootScope,Auth, $scope, User, $window, $timeout,$location) {
+    app.controller('sessionCtrl', function ($rootScope,Auth, $scope, User, $window, $timeout,$location,$interval) {
 
         $rootScope.$on('$routeChangeStart', function () {
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
-            console.log($window.innerHeight)
-            $scope.windowHeight = $window.innerHeight +150
-
+        
             if(!Auth.isLoggedIn()){
 
                 Auth.logout()
@@ -123,6 +121,8 @@
 
       
       if (hour == "8:00am" || hour == "9:00am") {
+
+        console.log("AAR")
         promise =    $interval(function(){
 
             $scope.fadeInLoading = false;
