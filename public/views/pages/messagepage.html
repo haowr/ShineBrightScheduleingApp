@@ -599,27 +599,40 @@
                              <div class="row">
  
                                  <div class="col s12">
+
                                      <div class="row">
+
                                          <form class="col s12">
+
                                              <div class="row">
+
                                                  <div class="input-field col s12">
+
                                                      <input id="first_name" type="text" ng-model="messageObject.subject"
                                                          name="subject" class="validate">
                                                      <label class="black-text" for="first_name">Subject</label>
+
                                                  </div>
+
+                                                 <!-- MESSAGE CANNOT BE EMPTY ERROR -->
+
                                                  <div class = "col s12">
              
                                                      <div ng-show="messageSubjectCannotBeEmpty" class = "col s12 red lighten-4" >
  
                                                          <p class = "montserrat animated shake flow-text" style="font-size:14px; padding-top:6px;padding-bottom:20px;"> Message Subject Cannot Be Empty :)!</p>
  
- 
                                                      </div>
+
                                                      <div class = "row"></div>
                      
-                                             </div>
+                                                </div>
+
+                                                <!-- MESSAGE CANNOT BE EMPTY ERROR -->
+
  
                                              </div>
+                                             
                                                  <div class="input-field col s12">
                                                      <textarea id="textarea1" class="materialize-textarea"
                                                          ng-model="messageObject.body" name="body"></textarea>
