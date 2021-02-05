@@ -1068,8 +1068,24 @@
     
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0"
-                        $scope.loadingBooking4   = true;
+                        //$scope.loadingBooking4   = true;
+
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = false;
+
+                        },500)
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = true;
+
+                        },1000)
+    
                         $scope.bookCheckUp49 = false;
+
+
 
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     

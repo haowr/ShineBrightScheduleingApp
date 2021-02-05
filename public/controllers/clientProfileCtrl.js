@@ -26,19 +26,7 @@
 
         })
 
-        /*
-
-        if(!Auth.isLoggedIn()){
-
-            $location.path('/')
-            $rootScope.loggedIn = false;
-            console.log("I'm not logged in...")
-
-        }else{
-
-            $rootScope.loggedIn = true;
-        }*/
-
+    
         $scope.idFromLocalStorage           = $window.localStorage.getItem('_id')
         $scope.clientName                   = $window.localStorage.getItem('name');
         $scope.currentBookingTitle          = "";
