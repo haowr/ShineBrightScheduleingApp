@@ -120,7 +120,7 @@
 
         $scope.isCurrentlybooked = false;
 
-        $scope.fadeInLoading = true;
+        $scope.fadeInLoading = false;
         $scope.fadeInLoading1 = true;
         $scope.fadeInLoading2 = true;
         $scope.fadeInLoading3 = true;
@@ -170,19 +170,21 @@
       
       // store the interval promise
 
+      
+ 
   
        if (hour == "8:10am" || hour == "9:10am") {
-
         promise11 =    $interval(function(){
 
             $scope.fadeInLoading1 = false;
     
         },500)
         promise12 = $interval(function(){
-
+    
             $scope.fadeInLoading1 = true;
     
         },1000)
+       
     
        }
       
@@ -200,6 +202,7 @@
             $scope.fadeInLoading2 = true;
     
         },1000)
+
         console.log("Should be here...")
     
     
@@ -211,6 +214,7 @@
             $scope.fadeInLoading3 = false;
     
         },500)
+
         promise32 =    $interval(function(){
     
             $scope.fadeInLoading3 = true;
@@ -251,7 +255,7 @@
 
 
     };
-  
+
     // stops the interval
     $scope.stop = function() {
         $interval.cancel(promise11)
@@ -267,7 +271,7 @@
       console.log("this has run..")
 
     };
-  
+    //$scope.start()
     // starting the interval by default
  
     // stops the interval when the scope is destroyed,
@@ -809,8 +813,6 @@
 
             $scope.submitCheckUp = function (hour) {
 
-                //$scope.windowHeight = $window.innerHeight +150
-
                 if (!$scope.isCurrentlyBooked){
     
                     $scope.shinebrightloading.play();
@@ -857,8 +859,8 @@
     
                                         $timeout(function () {
     
-                                            $scope.bookCheckUp8 = false;
-                                            $scope.bookCheckUp9 = false;
+                                            //$scope.bookCheckUp8 = false;
+                                            //$scope.bookCheckUp9 = false;
     
                                             $timeout(function () {
     
