@@ -571,6 +571,7 @@
                         $scope.sessionData.time     = "9:40am"
                         $scope.checkUpData.time     = "9:40am"
 
+                        /*
                         $interval(function(){
 
                             $scope.fadeInLoading = false;
@@ -582,6 +583,7 @@
                             $scope.fadeInLoading = true;
 
                         },1000)
+                        */
     
     
     
