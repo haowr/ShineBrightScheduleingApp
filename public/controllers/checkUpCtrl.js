@@ -8,7 +8,7 @@
 
     })
 
-    app.controller('checkUpCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window) {
+    app.controller('checkUpCtrl', function ($rootScope, $scope, Auth, User, $timeout, $location, $rootScope,$window,$interval) {
 
         $rootScope.$on('$routeChangeStart', function () {
 
@@ -423,9 +423,23 @@
     
                 }
     
+                $scope.fadeInLoading = true;
+ 
                 if (time == "9:10") {
     
                     if (!booked) {
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = false;
+
+                        },500)
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = true;
+
+                        },1000)
     
                         $scope.discovery910AMSelected = true;
                         $scope.discovery920AMSelected = false;

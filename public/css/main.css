@@ -37,6 +37,18 @@ canvas{
 .noborder{
     border-bottom:2px solid #ddd;
 }
+.fadeinloading{
+
+    opacity:1;
+    transition:.2s;
+
+
+}
+.fadeoutloading{
+
+   color:transparent;
+
+}
 /* Flash class and keyframe animation */
 .flashit{
     color:#f2f;
