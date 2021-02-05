@@ -423,24 +423,12 @@
     
                 }
     
-                $scope.fadeInLoading = true;
  
                 if (time == "9:10") {
     
                     if (!booked) {
 
-                        $interval(function(){
-
-                            $scope.fadeInLoading = false;
-
-                        },500)
-
-                        $interval(function(){
-
-                            $scope.fadeInLoading = true;
-
-                        },1000)
-    
+               
                         $scope.discovery910AMSelected = true;
                         $scope.discovery920AMSelected = false;
                         $scope.discovery930AMSelected = false;
@@ -579,6 +567,20 @@
                         $scope.discoveryData.time   = "9:40am"
                         $scope.sessionData.time     = "9:40am"
                         $scope.checkUpData.time     = "9:40am"
+                        $scope.fadeInLoading = true;
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = false;
+
+                        },500)
+
+                        $interval(function(){
+
+                            $scope.fadeInLoading = true;
+
+                        },1000)
+    
     
     
                     } else {
