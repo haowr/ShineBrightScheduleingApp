@@ -13,8 +13,7 @@
         $rootScope.$on('$routeChangeStart', function () {
 
             $rootScope.loggedIn     = Auth.isLoggedIn()  
-            console.log($window.innerHeight)
-            $scope.windowHeight = $window.innerHeight +150  
+          
 
             if(!Auth.isLoggedIn()){
 
@@ -100,6 +99,13 @@
             $scope.bookDiscovery38 = true;
             $scope.bookDiscovery48 = true;
             $scope.bookDiscovery58 = true;
+
+            $scope.fadeInLoading = true;
+            $scope.fadeInLoading1 = true;
+            $scope.fadeInLoading2 = true;
+            $scope.fadeInLoading3 = true;
+            $scope.fadeInLoading4 = true;
+            $scope.fadeInLoading5 = true;
 
             $scope.currentHour = $window.localStorage.getItem('hour')
             console.log("Current Hour", $scope.currentHour)
@@ -854,7 +860,8 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
-                        $scope.loadingBooking   = true;
+                        //$scope.loadingBooking   = true;
+                        $scope.start($scope.discoveryData.time)
                         
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
 
@@ -905,7 +912,8 @@
     
                                                 $timeout(function () {
     
-                                                    $scope.loadingBooking = false;
+                                                    //$scope.loadingBooking = false;
+                                                    $scope.stop()
                                                     $scope.shinebrightsuccess.play()
     
                                                 }, 500)
@@ -962,7 +970,9 @@
                         $scope.dateData.hour    = hour;
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
                         $scope.bookDiscovery    = false;
-                        $scope.loadingBooking1  = true;
+                        //$scope.loadingBooking1  = true;
+                        $scope.start($scope.discoveryData.time)
+
     
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1007,7 +1017,8 @@
     
                                                         $timeout(function () {
     
-                                                            $scope.loadingBooking1 = false;
+                                                            //$scope.loadingBooking1 = false;
+                                                            $scope.stop()
                                                             $scope.shinebrightsuccess.play()
     
                                                         }, 500)
@@ -1067,7 +1078,7 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
-                        $scope.loadingBooking2  = true;
+                        $scope.start($scope.discoveryData.time)
     
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1117,7 +1128,8 @@
     
                                                             $timeout(function () {
     
-                                                                $scope.loadingBooking2 = false;
+                                                                //$scope.loadingBooking2 = false;
+                                                                $scope.stop()
                                                                 $scope.shinebrightsuccess.play()
     
                                                             }, 500)
@@ -1180,7 +1192,7 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
-                        $scope.loadingBooking3  = true;
+                        $scope.start($scope.discoveryData.time)
     
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1223,8 +1235,8 @@
                                                         $scope.bookDiscovery59 = false;
     
                                                         $timeout(function () {
-    
-                                                            $scope.loadingBooking3 = false;
+                                                            
+                                                            $scope.stop()
                                                             $scope.shinebrightsuccess.play()
     
                                                         }, 500)
@@ -1282,7 +1294,7 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
-                        $scope.loadingBooking4  = true;
+                        $scope.start($scope.discoveryData.time)
     
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1330,8 +1342,8 @@
                                                             $scope.bookDiscovery59 = false;
     
                                                             $timeout(function () {
-    
-                                                                $scope.loadingBooking4 = false;
+
+                                                                $scope.stop()
                                                                 $scope.shinebrightsuccess.play()
     
                                                             }, 500)
@@ -1414,8 +1426,8 @@
                                                         $scope.bookDiscovery59 = false;
     
                                                         $timeout(function () {
-    
-                                                            $scope.loadingBooking4 = false;
+
+                                                            //$scope.stop()
                                                             $scope.shinebrightsuccess.play()
     
                                                         }, 500)
@@ -1469,7 +1481,8 @@
                         $scope.dateData.id      = "5bf4f0a4b8f53129ecbc13a0";
     
                         $scope.bookDiscovery    = false;
-                        $scope.loadingBooking5  = true;
+                        $scope.start($scope.discoveryData.time)
+
     
                         User.getDate("5bf4f0a4b8f53129ecbc13a0").then(function (data) {
     
@@ -1505,7 +1518,7 @@
     
                                                     $timeout(function () {
     
-                                                        $scope.loadingBooking5 = false;
+                                                        $scope.stop()
                                                         $scope.shinebrightsuccess.play()
     
                                                     }, 500)
@@ -1621,8 +1634,6 @@
     
             }
     
-
-      
     })
 
 }());
