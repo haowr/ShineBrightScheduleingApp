@@ -120,7 +120,7 @@
 
         $scope.isCurrentlybooked = false;
 
-        $scope.fadeInLoading = false;
+        $scope.fadeInLoading = true;
         $scope.fadeInLoading1 = true;
         $scope.fadeInLoading2 = true;
         $scope.fadeInLoading3 = true;
@@ -159,7 +159,7 @@
 
     // store the interval promise in this variable
     var promise;
-    var promise2
+    var promise2;
     var promise11, promise12, promise21, promise22, promise31, promise32, promise41, promise42,promise51, promise52
   
     
@@ -171,7 +171,20 @@
       // store the interval promise
 
       
- 
+      if (hour == "8:00am" || hour == "9:00am") {
+        promise =    $interval(function(){
+
+            $scope.fadeInLoading = false;
+    
+        },500)
+        promise2 = $interval(function(){
+    
+            $scope.fadeInLoading = true;
+    
+        },1000)
+       
+    
+       } 
   
        if (hour == "8:10am" || hour == "9:10am") {
         promise11 =    $interval(function(){
@@ -258,6 +271,8 @@
 
     // stops the interval
     $scope.stop = function() {
+        $interval.cancel(promise)
+        $interval.cancel(promise2)  
         $interval.cancel(promise11)
       $interval.cancel(promise12)    
         $interval.cancel(promise21)
@@ -859,8 +874,8 @@
     
                                         $timeout(function () {
     
-                                            //$scope.bookCheckUp8 = false;
-                                            //$scope.bookCheckUp9 = false;
+                                            $scope.bookCheckUp8 = false;
+                                            $scope.bookCheckUp9 = false;
     
                                             $timeout(function () {
     
