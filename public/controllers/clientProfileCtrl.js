@@ -64,6 +64,8 @@
         $scope.sessionAvailable3    = true;
         $scope.discoveryAvailable3  = true;
 
+        $scope.loadingDone = false;
+
         $scope.messageSent          = false;
 
         $scope.messageObject                = {
@@ -225,6 +227,7 @@
             $scope.clientName                   = data.data.user.name;
             $scope.currentUserBookingsArray     = data.data.user.bookings;
         
+            $scope.loadingDone = true;
 
             if($scope.currentUserBookingsArray.length > 0){
 
