@@ -685,7 +685,6 @@
     
                     $scope.shinebrightloading.play();
     
-    
                     if ($scope.checkUpData.time == "8:00am" || $scope.checkUpData.time == "9:00am") {
     
                         $scope.dateData.hour    = hour;
