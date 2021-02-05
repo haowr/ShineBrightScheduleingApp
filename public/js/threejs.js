@@ -223,7 +223,7 @@
 
     console.log(renderer.domElement)
 
-            }           
+    }           
 
 function onWindowResize() {
 
