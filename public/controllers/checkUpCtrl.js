@@ -119,6 +119,9 @@
         $scope.shinebrighttap       = new Audio('../audio/shinebrighttap.wav');
 
         $scope.isCurrentlybooked = false;
+
+        $scope.fadeInLoading = true;
+
         $scope.checkUpData = {
 
         }
@@ -567,7 +570,6 @@
                         $scope.discoveryData.time   = "9:40am"
                         $scope.sessionData.time     = "9:40am"
                         $scope.checkUpData.time     = "9:40am"
-                        $scope.fadeInLoading = true;
 
                         $interval(function(){
 
