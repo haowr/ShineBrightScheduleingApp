@@ -1341,7 +1341,6 @@
     
                                             $scope.bookCheckUp58 = false;
                                             $scope.bookCheckUp59 = false;
-                                            $rootScope.windowHeight = $window.innerHeight
 
     
                                             $timeout(function () {
