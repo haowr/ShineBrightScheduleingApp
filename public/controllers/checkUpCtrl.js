@@ -13,13 +13,7 @@
         $rootScope.$on('$routeChangeStart', function () {
 
             $rootScope.loggedIn     = Auth.isLoggedIn()    
-            console.log($window.innerHeight)
-            $scope.$watch('windowHeight', function(newValue, oldValue) {
-                if(newValue!==oldValue) {
-                 console.log(newValue);
-                 $scope.windowHeight = 731
-                } 
-             });
+           
             //$rootScope.windowHeight = 10000
 
             if(!Auth.isLoggedIn()){
