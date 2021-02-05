@@ -121,7 +121,7 @@
         $scope.isCurrentlybooked = false;
 
         $scope.fadeInLoading = true;
-        $scope.fadeInLoading1 = false;
+        $scope.fadeInLoading1 = true;
         $scope.fadeInLoading2 = true;
         $scope.fadeInLoading3 = true;
         $scope.fadeInLoading4 = true;
@@ -170,24 +170,23 @@
       
       // store the interval promise
 
-      if (hour == "8:00am" || hour == "9:00am") {
   
        if (hour == "8:10am" || hour == "9:10am") {
 
         promise11 =    $interval(function(){
 
-            $scope.fadeInLoading = false;
+            $scope.fadeInLoading1 = false;
     
         },500)
         promise12 = $interval(function(){
 
-            $scope.fadeInLoading = true;
+            $scope.fadeInLoading1 = true;
     
         },1000)
     
        }
       
-    }
+    
     if (hour == "8:20am" || hour == "9:20am") {
 
         promise21 =    $interval(function(){
@@ -201,6 +200,7 @@
             $scope.fadeInLoading2 = true;
     
         },1000)
+        console.log("Should be here...")
     
     
     }
@@ -213,7 +213,7 @@
         },500)
         promise32 =    $interval(function(){
     
-            $scope.fadeInLoading3 = false;
+            $scope.fadeInLoading3 = true;
     
         },1000)
 
@@ -228,7 +228,7 @@
         },500)
         promise42 =    $interval(function(){
     
-            $scope.fadeInLoading4 = false;
+            $scope.fadeInLoading4 = true;
     
         },1000)
     
@@ -243,22 +243,11 @@
     },500)
     promise52 =    $interval(function(){
 
-        $scope.fadeInLoading5 = false;
+        $scope.fadeInLoading5 = true;
 
     },1000)
 
-    
-    }
-
-
-
-  
-
- 
-
-
-
-
+}
 
 
     };
