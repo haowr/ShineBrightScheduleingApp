@@ -422,7 +422,8 @@
 
  
                             <a href="#"> <p class="montserrat  black-text flow-text"
-                                style=" font-size:25px;border-bottom:2px solid black; font-weight:400;">Inbox</p></a>
+                                style=" font-size:25px;font-weight:400;"
+                                ng-class="{'border':openInboxSelected, 'noborder':!openInboxSelected}">Inbox</p></a>
 
 
                      </div>
@@ -430,7 +431,8 @@
                      <div ng-click="openCompose()" class="col s6 center-align ">
                         
                         <a href="#"> <p class="montserrat  black-text flow-text"
-                            style=" font-size:25px;border-bottom:2px solid black; font-weight:400;">Compose</p></a>
+                            ng-class="{'border':openComposeSelected, 'noborder':!openComposeSlected}"
+                            style=" font-size:25px; font-weight:400;">Compose</p></a>
 
                      </div>
                       
@@ -576,17 +578,19 @@
 
  
                                     <a href="#" > <p ng-click="openInbox()"
-                                            style=" font-size:25px; border-bottom:2px solid black; font-weight:400;"
+                                            style=" font-size:25px;  font-weight:400;"
+                                            ng-class="{'border':openInboxSelected, 'noborder':!openInboxSelected}"
                                             class="montserrat black-text flow-text">Inbox</p>
                                     </a>
 
  
                              </div>
  
-                             <div ng-click="openCompose()" class="col s6 center-align ">
+                             <div class="col s6 center-align ">
                                 
-                                <a href="#" > <p ng-click="openInbox()"
-                                    style=" font-size:25px; border-bottom:2px solid black; font-weight:400;"
+                                <a href="#" > <p 
+                                    style=" font-size:25px; font-weight:400;"
+                                    ng-class="{'border':openComposeSelected, 'noborder':!openComposeSelected}"
                                     class="montserrat black-text flow-text">Compose</p>
                             </a>
  

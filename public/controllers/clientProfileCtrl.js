@@ -86,11 +86,18 @@
 
             console.log("Oy")
         }
+        $scope.openInboxSelected = true;
+        $scope.openComposeSelected = false;
+
         $scope.openInbox = function () {
+
             $scope.shinebrighttap.play()
+
             if (!$scope.inboxOpen) {
 
                 $scope.inboxOpen                    = true;
+                $scope.openInboxSelected            = true;
+                $scope.openComposeSelected          = false;
                 $scope.composeOpen                  = false;
                 $scope.messageSubjectCannotBeEmpty  = false;
                 $scope.messageBodyCannotBeEmpty     = false;
@@ -206,13 +213,17 @@
 
 
         }
-
+        
         $scope.openCompose = function () {
+            
             $scope.shinebrighttap.play()
+            console.log("openCompose")
 
             if (!$scope.composeOpen) {
 
                 $scope.composeOpen      = true;
+                $scope.openInboxSelected = false;
+                $scope.openComposeSelected = true;
                 $scope.inboxOpen        = false;
                 $scope.userListOpen     = true;
 
